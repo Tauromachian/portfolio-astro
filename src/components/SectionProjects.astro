@@ -1,5 +1,5 @@
 ---
-import BaseSection from "./BaseSection.astro";
+import BaseSection from "./BaseSection.vue";
 import CardProject from "./CardProject.astro";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
@@ -48,7 +48,7 @@ const projects = [
 ];
 ---
 
-<BaseSection :title="t('projects.title')">
+<BaseSection title={t("projects.title")} titleAlignment="">
   <div class="sm:columns-2 md:columns-3 gap-4 w-100">
     {
       projects.map((project) => (

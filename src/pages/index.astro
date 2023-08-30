@@ -12,6 +12,11 @@ import SectionProjects from "../components/SectionProjects.astro";
 import SectionAdditionalWork from "../components/SectionAdditionalWork.astro";
 import SectionContacts from "../components/SectionContacts.vue";
 
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const themes = [
   { value: "default", text: "Default", iconColor: "#33bebc" },
   { value: "crazy", text: "Crazy", iconColor: "#33bebc" },
@@ -56,20 +61,20 @@ const links = [
   <header>
     <BaseGradient degrees="180deg" height="6" class="base-gradient" />
     <div class="top-0 left-0 right-0 top-bar">
-      <TopNav client:load links={links} themes={themes} />
+      <TopNav t={t} client:load links={links} themes={themes} />
     </div>
   </header>
 
   <main class="container mx-auto">
-    <SectionHero id="home" />
+    <SectionHero t={t} id="home" />
     <SectionAbout id="about" />
     <SectionSkills id="skills" />
     <SectionProjects id="projects" />
     <SectionAdditionalWork id="additional-work" />
-    <SectionContacts client:visible id="social-networks" />
+    <SectionContacts t={t} client:visible id="social-networks" />
 
     <div class="fixed bottom-0 left-0 right-0 z-50">
-      <BottomNav client:load links={links} themes={themes} />
+      <BottomNav t={t} client:load links={links} themes={themes} />
     </div>
     <div class="mt-20 pt-10 sm:mt-0 content"></div>
     <VueBackToTop client:visible />

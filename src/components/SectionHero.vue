@@ -62,6 +62,12 @@ export default {
     ZDog,
   },
   name: "SectionHero",
+  props: {
+    t: {
+      type: Function,
+      default: () => ({}),
+    },
+  },
   data() {
     return {
       colorIcons: "",
@@ -83,7 +89,6 @@ export default {
       const elmnt = document.getElementById(postitionId.split("#").pop());
       elmnt.scrollIntoView({ behavior: "smooth" });
     },
-    t,
   },
 };
 </script>

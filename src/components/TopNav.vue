@@ -17,7 +17,7 @@
           class="px-3 relative mx-0 transition-colors transition-200 navbar__link"
         >
           <a :href="link.link" @click.prevent="scrollToPosition(link.link)">
-            {{ $t(link.text) }}
+            {{ t(link.text) }}
           </a>
         </li>
       </ul>
@@ -58,6 +58,10 @@ import ThemeSelector from "./ThemeSelector.vue";
 import SocialIconsBase from "./SocialIconsBase.vue";
 
 defineProps({
+  t: {
+    type: Function,
+    default: () => ({}),
+  },
   links: {
     type: Array,
     default: () => [],

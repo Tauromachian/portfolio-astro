@@ -76,6 +76,20 @@ import BaseSection from "./BaseSection.vue";
 
 export default {
   name: "SectionContacts",
+  components: {
+    BaseButton,
+    BaseAreaText,
+    BaseInputText,
+    AppAlert,
+    BaseCard,
+    BaseSection,
+  },
+  props: {
+    t: {
+      type: Function,
+      default: () => ({}),
+    },
+  },
   data() {
     return {
       colorIcons: "",
