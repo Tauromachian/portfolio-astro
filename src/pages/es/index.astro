@@ -1,16 +1,16 @@
 ---
-import Base from "../layouts/Base.astro";
+import Base from "../../layouts/Base.astro";
 
-import BaseGradient from "../components/BaseGradient.astro";
-import TopNav from "../components/TopNav.vue";
-import BottomNav from "../components/BottomNav.vue";
-import VueBackToTop from "../components/VueBackToTop.vue";
-import SectionHero from "../components/SectionHero.vue";
-import SectionAbout from "../components/SectionAbout.vue";
-import SectionSkills from "../components/SectionSkills.vue";
-import SectionProjects from "../components/SectionProjects.vue";
-import SectionAdditionalWork from "../components/SectionAdditionalWork.vue";
-import SectionContacts from "../components/SectionContacts.vue";
+import BaseGradient from "../../components/BaseGradient.astro";
+import TopNav from "../../components/TopNav.vue";
+import BottomNav from "../../components/BottomNav.vue";
+import VueBackToTop from "../../components/VueBackToTop.vue";
+import SectionHero from "../../components/SectionHero.vue";
+import SectionAbout from "../../components/SectionAbout.vue";
+import SectionSkills from "../../components/SectionSkills.vue";
+import SectionProjects from "../../components/SectionProjects.vue";
+import SectionAdditionalWork from "../../components/SectionAdditionalWork.vue";
+import SectionContacts from "../../components/SectionContacts.vue";
 
 const themes = [
   { value: "default", text: "Default", iconColor: "#33bebc" },
@@ -77,7 +77,7 @@ const links = [
 </Base>
 
 <script>
-  import { setTheme } from "../utils/themeHelper";
+  import { setTheme } from "../../utils/themeHelper";
 
   // Handle events
   addEventListener("load", () => {
