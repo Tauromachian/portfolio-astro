@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^4.0.0",
+    "@astrojs/vue": "^2.2.1",
     "@mdi/js": "^7.2.96",
     "astro": "^2.10.14",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.0.24",
+    "vue": "^3.2.30"
   }
 }
