@@ -57,6 +57,10 @@ defineProps({
     type: Array,
     default: () => [],
   },
+  themes: {
+    type: Array,
+    default: () => [],
+  },
 });
 const theme = ref("default");
 
