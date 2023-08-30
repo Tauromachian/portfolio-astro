@@ -4,16 +4,16 @@
       class="flex flex-col h-full justify-center hero__text md:mr-5 xl:mr-0 md:basis-1/2 shrink-0"
     >
       <h1 class="text-6xl xl:text-7xl 2xl:text-8xl">
-        {{ $t("hero.title") }}
+        {{ t("hero.title") }}
       </h1>
       <p class="mt-10 text-xl">
         <strong>
-          {{ $t("hero.description1") }}
+          {{ t("hero.description1") }}
         </strong>
       </p>
       <p class="text-xl">
         <strong>
-          {{ $t("hero.description2") }}
+          {{ t("hero.description2") }}
         </strong>
       </p>
       <div
@@ -25,7 +25,7 @@
           prepend-icon="mdiDownload"
           size="x-large"
         >
-          {{ $t("hero.button1") }}
+          {{ t("hero.button1") }}
         </base-button-call-to-action>
         <base-button-call-to-action
           class="mt-2 sm:mt-12 lg:mt-2 xl:mt-12 sm:ml-2 lg:ml-0 xl:ml-2"
@@ -35,7 +35,7 @@
           size="x-large"
           @click="scrollToPosition('social-networks')"
         >
-          {{ $t("hero.button2") }}
+          {{ t("hero.button2") }}
         </base-button-call-to-action>
       </div>
     </div>
@@ -51,6 +51,11 @@
 </template>
 
 <script>
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 export default {
   name: "SectionHero",
   data() {
@@ -74,6 +79,7 @@ export default {
       const elmnt = document.getElementById(postitionId.split("#").pop());
       elmnt.scrollIntoView({ behavior: "smooth" });
     },
+    t,
   },
 };
 </script>

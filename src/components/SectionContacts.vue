@@ -1,7 +1,7 @@
 <template>
   <base-section
     class="items-center justify-center"
-    :title="$t('contacts')"
+    :title="t('contacts')"
     title-alignment="self-center"
   >
     <div class="flex flex-wrap gap-4 justify-center text-7xl md:text-8xl">
@@ -24,20 +24,20 @@
     </div>
     <base-card class="mt-8 p-4">
       <h3 class="text-base sm:text-2xl font-bold">
-        {{ $t("formTitle") }}
+        {{ t("formTitle") }}
       </h3>
       <app-alert v-if="message.active" :message="message" class="mt-3" />
       <form @submit.prevent="submitForm">
         <base-input-text
           v-model="form.name"
-          :label="$t('form.name')"
+          :label="t('form.name')"
           class="mt-3"
           required
           name="name"
         />
         <base-input-text
           v-model="form.from"
-          :label="$t('form.email')"
+          :label="t('form.email')"
           class="mt-3"
           type="email"
           required
@@ -45,7 +45,7 @@
         />
         <base-area-text
           v-model="form.body"
-          :label="$t('form.message')"
+          :label="t('form.message')"
           required
           class="mt-3"
           name="message"
@@ -58,7 +58,7 @@
             prepend-icon="mdiEmailArrowRight"
             type="submit"
           >
-            {{ $t("button.send") }}
+            {{ t("button.send") }}
           </base-button>
         </span>
       </form>
@@ -67,6 +67,11 @@
 </template>
 
 <script>
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 export default {
   name: "SectionContacts",
   data() {

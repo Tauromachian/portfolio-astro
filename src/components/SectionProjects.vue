@@ -1,5 +1,5 @@
 <template>
-  <base-section :title="$t('projects.title')">
+  <base-section :title="t('projects.title')">
     <div class="sm:columns-2 md:columns-3 gap-4 w-100">
       <div
         v-for="(project, index) in projects"
@@ -20,6 +20,11 @@
 </template>
 
 <script setup>
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const projects = [
   {
     src: "monarch-starter-site",

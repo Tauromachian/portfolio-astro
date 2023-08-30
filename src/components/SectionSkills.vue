@@ -1,5 +1,5 @@
 <template>
-  <base-section class="items-center justify-center" :title="$t('skills')">
+  <base-section class="items-center justify-center" :title="t('skills')">
     <div class="flex flex-col">
       <base-card
         v-for="(skill, index) in skills"
@@ -18,7 +18,7 @@
 
           <div class="flex flex-col">
             <h3>{{ skill.name }}</h3>
-            <p>{{ $t(skill.description) }}</p>
+            <p>{{ t(skill.description) }}</p>
             <chip-river :values="skill.technologies" class="mt-2" />
           </div>
         </card-text>
@@ -28,6 +28,11 @@
 </template>
 
 <script setup>
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const skills = [
   {
     name: "Frontend",

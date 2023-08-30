@@ -1,5 +1,5 @@
 <template>
-  <base-section :title="$t('additionalWork.title')">
+  <base-section :title="t('additionalWork.title')">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <div
         v-for="(project, index) in projects"
@@ -20,6 +20,11 @@
 </template>
 
 <script setup>
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const projects = [
   {
     src: "stack-overflow-profile",
