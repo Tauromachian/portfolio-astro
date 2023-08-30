@@ -1,0 +1,43 @@
+---
+import BaseSection from "./BaseSection.astro";
+import CardProject from "./CardProject.astro";
+
+const projects = [
+  {
+    src: "stack-overflow-profile",
+    title: "StackOverflow",
+    link: "https://stackoverflow.com/users/10824037/jogarcia",
+    alt: "Profile picture to StackOverflow",
+  },
+  {
+    src: "github-profile",
+    title: "GitHub",
+    link: "https://github.com/Tauromachian",
+    alt: "Profile picture to GitHub",
+  },
+  {
+    src: "medium-profile",
+    title: "Medium",
+    link: "https://medium.com/@jogarcia",
+    alt: "Profile picture to Medium",
+  },
+];
+---
+
+<BaseSection :title="t('additionalWork.title')">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {
+      projects.map((project) => (
+        <div class="col-span-1">
+          <CardProject
+            class="w-full"
+            title={project.title}
+            site-url={project.link}
+            src={project.src}
+            alt={project.alt}
+          />
+        </div>
+      ))
+    }
+  </div>
+</BaseSection>

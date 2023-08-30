@@ -1,33 +1,10 @@
-<template>
-  <base-section class="items-center justify-center" :title="t('skills')">
-    <div class="flex flex-col">
-      <base-card
-        v-for="(skill, index) in skills"
-        :key="`skill-${index}`"
-        class="bg-secondary md:mx-4 mt-4 md:mt-8"
-      >
-        <card-text class="flex p-0 md:p-3" no-padding>
-          <div>
-            <SocialIconsBase
-              height="100px"
-              width="100px"
-              class="w-20 md:w-32 color-primary"
-              :icon="skill.icon"
-            />
-          </div>
+---
+import BaseSection from "./BaseSection.astro";
+import BaseCard from "./BaseCard.astro";
+import SocialIconsBase from "./SocialIconsBase.astro";
+import CardText from "./CardText.astro";
+import ChipRiver from "./ChipRiver.astro";
 
-          <div class="flex flex-col">
-            <h3>{{ skill.name }}</h3>
-            <p>{{ t(skill.description) }}</p>
-            <chip-river :values="skill.technologies" class="mt-2" />
-          </div>
-        </card-text>
-      </base-card>
-    </div>
-  </base-section>
-</template>
-
-<script setup>
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
@@ -77,6 +54,31 @@ const skills = [
     technologies: ["English", "Español"],
   },
 ];
-</script>
+---
 
-<style></style>
+<BaseSection class="items-center justify-center" :title="t('skills')">
+  <div class="flex flex-col">
+    {
+      skills.map((skill) => (
+        <BaseCard class="bg-secondary md:mx-4 mt-4 md:mt-8">
+          <CardText class="flex p-0 md:p-3" no-padding>
+            <div>
+              <SocialIconsBase
+                height="100px"
+                width="100px"
+                class="w-20 md:w-32 color-primary"
+                icon={skill.icon}
+              />
+            </div>
+
+            <div class="flex flex-col">
+              <h3>{skill.name}</h3>
+              <p>{t(skill.description)}</p>
+              <ChipRiver values={skill.technologies} class="mt-2" />
+            </div>
+          </CardText>
+        </BaseCard>
+      ))
+    }
+  </div>
+</BaseSection>

@@ -1,25 +1,7 @@
-<template>
-  <base-section :title="t('projects.title')">
-    <div class="sm:columns-2 md:columns-3 gap-4 w-100">
-      <div
-        v-for="(project, index) in projects"
-        :key="`project-card-${index}`"
-        class="inline-block"
-      >
-        <card-project
-          class="w-full mb-4"
-          :title="project.title"
-          :description="project.description"
-          :site-url="project.link"
-          :src="project.src"
-          :alt="project.alt"
-        />
-      </div>
-    </div>
-  </base-section>
-</template>
+---
+import BaseSection from "./BaseSection.astro";
+import CardProject from "./CardProject.astro";
 
-<script setup>
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
@@ -64,6 +46,22 @@ const projects = [
     alt: "Simple template of a possible flower store.",
   },
 ];
-</script>
+---
 
-<style></style>
+<BaseSection :title="t('projects.title')">
+  <div class="sm:columns-2 md:columns-3 gap-4 w-100">
+    {
+      projects.map((project) => (
+        <div class="col-span-1">
+          <CardProject
+            class="w-full"
+            title={project.title}
+            site-url={project.link}
+            src={project.src}
+            alt={project.alt}
+          />
+        </div>
+      ))
+    }
+  </div>
+</BaseSection>
