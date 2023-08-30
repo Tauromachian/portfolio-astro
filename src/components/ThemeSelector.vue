@@ -13,7 +13,14 @@
 </template>
 
 <script>
+import ListWrapper from "./ListWrapper.vue";
+import ListItem from "./ListItem.vue";
+
 export default {
+  components: {
+    ListWrapper,
+    ListItem,
+  },
   props: {
     value: {
       type: String,

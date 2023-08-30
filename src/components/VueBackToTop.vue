@@ -15,7 +15,12 @@
 </template>
 
 <script>
+import SocialIconsBase from "./SocialIconsBase.vue";
+
 export default {
+  components: {
+    SocialIconsBase,
+  },
   name: "VueBackToTop",
   data() {
     return {

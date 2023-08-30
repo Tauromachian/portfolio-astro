@@ -51,12 +51,16 @@
 </template>
 
 <script>
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+import BaseButtonCallToAction from "./BaseButtonCallToAction.vue";
+import SocialIconsBase from "./SocialIconsBase.vue";
+import ZDog from "./ZDog.vue";
 
 export default {
+  components: {
+    BaseButtonCallToAction,
+    SocialIconsBase,
+    ZDog,
+  },
   name: "SectionHero",
   data() {
     return {

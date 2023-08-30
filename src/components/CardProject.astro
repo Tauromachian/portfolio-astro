@@ -1,5 +1,8 @@
 ---
 const { src, title, siteUrl, alt } = Astro.props;
+
+import BaseCard from "./BaseCard.vue";
+import CardText from "./CardText.astro";
 ---
 
 <a
@@ -8,7 +11,7 @@ const { src, title, siteUrl, alt } = Astro.props;
   href={siteUrl}
   target="_blank"
 >
-  <base-card class="rounded-lg">
+  <BaseCard class="rounded-lg">
     <picture>
       <source
         sizes="(min-width: 347px)"
@@ -30,12 +33,12 @@ const { src, title, siteUrl, alt } = Astro.props;
         :srcset={`images/original/${src}.jpg 1900w, images/1280/${src}.jpg 1280w, images/640/${src}.jpg 640w`}
       />
     </picture>
-    <card-text class="flex justify-center">
+    <CardText class="flex justify-center">
       <h3 class="font-bold">
         {{ title }}
       </h3>
-    </card-text>
-  </base-card>
+    </CardText>
+  </BaseCard>
 </a>
 
 <style lang="scss" scoped>

@@ -34,8 +34,15 @@
 </template>
 
 <script>
+import AppLoader from "./AppLoader.vue";
+import SocialIconsBase from "./SocialIconsBase.vue";
+
 export default {
   name: "BaseButton",
+  components: {
+    AppLoader,
+    SocialIconsBase,
+  },
   props: {
     value: {
       type: Boolean,

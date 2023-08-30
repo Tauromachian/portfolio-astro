@@ -52,6 +52,11 @@
 import { onMounted, ref } from "vue";
 import { setTheme } from "../utils/themeHelper";
 
+import BaseButton from "./BaseButton.vue";
+import BaseMenu from "./BaseMenu.vue";
+import ThemeSelector from "./ThemeSelector.vue";
+import SocialIconsBase from "./SocialIconsBase.vue";
+
 defineProps({
   links: {
     type: Array,

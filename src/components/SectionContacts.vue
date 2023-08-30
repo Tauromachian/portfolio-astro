@@ -67,10 +67,12 @@
 </template>
 
 <script>
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+import BaseButton from "./BaseButton.vue";
+import BaseAreaText from "./BaseAreaText.vue";
+import BaseInputText from "./BaseInputText.vue";
+import AppAlert from "./AppAlert.vue";
+import BaseCard from "./BaseCard.vue";
+import BaseSection from "./BaseSection.vue";
 
 export default {
   name: "SectionContacts",

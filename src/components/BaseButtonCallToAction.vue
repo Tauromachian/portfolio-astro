@@ -6,6 +6,6 @@
   </base-button>
 </template>
 
-<script>
-export default {};
+<script setup>
+import BaseButton from "./BaseButton.vue";
 </script>
