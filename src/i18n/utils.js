@@ -20,7 +20,7 @@ export function useTranslations(lang) {
 
 export function useClientSideTranslations(langObject) {
   return function t(key) {
-    return langObject[key] || langObject[key];
+    return findTranslation(langObject, key);
   };
 }
 
