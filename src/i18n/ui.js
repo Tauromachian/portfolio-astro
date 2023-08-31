@@ -12,3 +12,5 @@ export const ui = {
   en,
   es,
 };
+
+export const showDefaultLang = false;
