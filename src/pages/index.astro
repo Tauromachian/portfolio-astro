@@ -33,33 +33,11 @@ const links = [
 ];
 ---
 
-<style>
-  .base-gradient,
-  .top-bar {
-    display: none;
-  }
-
-  @media screen and (min-width: 835px) {
-    .base-gradient,
-    .top-bar {
-      display: block;
-    }
-  }
-
-  .bottom-nav {
-    display: block;
-  }
-
-  @media screen and (min-width: 835px) {
-    .bottom-nav {
-      display: none;
-    }
-  }
-</style>
-
 <Base>
   <header>
-    <BaseGradient degrees="180deg" height="6" class="base-gradient" />
+    <div class="base-gradient">
+      <BaseGradient degrees="180deg" height="6" />
+    </div>
     <div class="top-0 left-0 right-0 top-bar">
       <TopNav client:load links={links} themes={themes} />
     </div>

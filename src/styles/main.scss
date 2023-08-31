@@ -26,3 +26,20 @@
   transform: translate(2px, 2px);
   box-shadow: 4px 4px 0px 1px var(--shadow-color);
 }
+
+.top-bar {
+  display: none;
+}
+
+@media screen and (min-width: 835px) {
+  .top-bar {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 835px) {
+  .base-gradient,
+  .bottom-nav {
+    display: none;
+  }
+}
