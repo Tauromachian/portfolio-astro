@@ -13,7 +13,7 @@
             @click.prevent="scrollToPosition(link.link)"
           >
             <a :href="link.link" class="text-xl">
-              {{ t(link.text) }}
+              {{ $t(link.text) }}
             </a>
           </li>
         </ul>
@@ -56,6 +56,11 @@ import BaseButton from "./BaseButton.vue";
 import BaseMenu from "./BaseMenu.vue";
 import ThemeSelector from "./ThemeSelector.vue";
 import SocialIconsBase from "./SocialIconsBase.vue";
+
+import { useStore } from "@nanostores/vue";
+import { t } from "../stores/langStore";
+
+const $t = useStore(t);
 
 defineProps({
   links: {
