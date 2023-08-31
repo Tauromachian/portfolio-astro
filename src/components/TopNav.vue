@@ -17,32 +17,31 @@
           class="px-3 relative mx-0 transition-colors transition-200 navbar__link"
         >
           <a :href="link.link" @click.prevent="scrollToPosition(link.link)">
-            {{ t(link.text) }}
+            {{ $t(link.text) }}
           </a>
         </li>
       </ul>
       <div class="flex items-center">
-        <base-button
+        <BaseButton
           title="Translate"
           class="relative mx-0 transition-colors transition-200 navbar__link"
           icon
-          @click="changeLocale($i18n)"
         >
           <SocialIconsBase icon="mdiTranslate" />
-        </base-button>
-        <base-menu bottom="initial" top="3rem">
+        </BaseButton>
+        <BaseMenu bottom="initial" top="3rem">
           <template #activator="{ on }">
-            <base-button
+            <BaseButton
               title="Theme changer"
               class="relative mx-0 transition-colors transition-200 navbar__link"
               icon
               v-on="on"
             >
               <SocialIconsBase icon="mdiInvertColors" />
-            </base-button>
+            </BaseButton>
           </template>
           <theme-selector :themes="themes" :value="theme" @input="setTheme" />
-        </base-menu>
+        </BaseMenu>
       </div>
     </div>
   </nav>
@@ -50,6 +49,7 @@
 
 <script setup>
 import { onMounted, ref } from "vue";
+
 import { setTheme } from "../utils/themeHelper";
 
 import BaseButton from "./BaseButton.vue";
@@ -57,11 +57,12 @@ import BaseMenu from "./BaseMenu.vue";
 import ThemeSelector from "./ThemeSelector.vue";
 import SocialIconsBase from "./SocialIconsBase.vue";
 
+import { useStore } from "@nanostores/vue";
+import { t } from "../stores/langStore";
+
+const $t = useStore(t);
+
 defineProps({
-  t: {
-    type: Function,
-    default: () => ({}),
-  },
   links: {
     type: Array,
     default: () => [],
