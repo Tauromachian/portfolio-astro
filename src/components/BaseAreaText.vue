@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col">
-    <label :for="label">{label}</label>
+    <label :for="label">{{ label }}</label>
     <textarea
       :id="label"
       v-model="text"
