@@ -58,10 +58,6 @@ import ThemeSelector from "./ThemeSelector.vue";
 import SocialIconsBase from "./SocialIconsBase.vue";
 
 defineProps({
-  t: {
-    type: Function,
-    default: () => () => {},
-  },
   links: {
     type: Array,
     default: () => [],
