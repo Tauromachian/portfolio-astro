@@ -1,0 +1,26 @@
+body {
+  font-family: "Pridi", serif;
+  background-color: var(--bg-color-primary);
+  color: var(--text-color-secondary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Righteous", cursive;
+  color: var(--text-color-primary);
+}
+
+h2 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+p {
+  font-size: 1.15rem;
+}
