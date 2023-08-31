@@ -14,7 +14,7 @@ export function getLangFromUrl(url) {
 
 export function useTranslations(lang) {
   return function t(key) {
-    return ui[lang][key] || ui[defaultLang][key];
+    return findTranslation(ui[lang], key);
   };
 }
 
