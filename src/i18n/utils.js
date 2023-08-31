@@ -23,3 +23,26 @@ export function useClientSideTranslations(langObject) {
     return langObject[key] || langObject[key];
   };
 }
+
+function findTranslation(langObject, keyString) {
+  const keys = keyString.split(".");
+
+  if (keys.length === 1) {
+    return langObject[keyString];
+  }
+
+  let currentKey = keys.shift();
+  let currentObject = langObject[currentKey];
+  while (keys.length > 0) {
+    const nextKey = keys[0];
+
+    if (typeof currentObject[nextKey] === "string") {
+      return currentObject[nextKey];
+    }
+
+    currentKey = keys.shift();
+    currentObject = langObject[currentKey];
+  }
+
+  return "No translation found";
+}
