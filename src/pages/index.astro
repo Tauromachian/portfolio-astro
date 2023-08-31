@@ -61,28 +61,32 @@ const links = [
   <header>
     <BaseGradient degrees="180deg" height="6" class="base-gradient" />
     <div class="top-0 left-0 right-0 top-bar">
-      <TopNav t={t} client:load links={links} themes={themes} />
+      <TopNav client:load links={links} themes={themes} />
     </div>
   </header>
-
+  <!-- 
   <main class="container mx-auto">
-    <SectionHero t={t} id="home" />
+    <SectionHero client:load id="home" />
     <SectionAbout id="about" />
     <SectionSkills id="skills" />
     <SectionProjects id="projects" />
     <SectionAdditionalWork id="additional-work" />
-    <SectionContacts t={t} client:visible id="social-networks" />
+    <SectionContacts client:visible id="social-networks" />
 
     <div class="fixed bottom-0 left-0 right-0 z-50">
-      <BottomNav t={t} client:load links={links} themes={themes} />
+      <BottomNav client:load links={links} themes={themes} />
     </div>
     <div class="mt-20 pt-10 sm:mt-0 content"></div>
     <VueBackToTop client:visible />
-  </main>
+  </main> -->
 </Base>
 
 <script>
-  import { setTheme } from "../utils/themeHelper";
+  import { setTheme } from "../utils/themeHelper.js";
+  import { lang } from "../stores/langStore.js";
+  import en from "../i18n/en";
+
+  lang.set(en);
 
   // Handle events
   addEventListener("load", () => {
