@@ -34,7 +34,7 @@
             <SocialIconsBase icon="mdiInvertColors"></SocialIconsBase>
           </base-button>
         </template>
-        <theme-selector :value="theme" :themes="themes" @input="setTheme" />
+        <theme-selector :value="theme" :themes="themes" @input="saveTheme" />
       </base-menu>
       <base-button
         title="Menu"
@@ -73,6 +73,11 @@ defineProps({
   },
 });
 const theme = ref("default");
+
+const saveTheme = (value) => {
+  theme.value = value;
+  setTheme(value);
+};
 
 onMounted(() => {
   const localStorageTheme = localStorage.getItem("theme") ?? "default";
