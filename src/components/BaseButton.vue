@@ -13,12 +13,12 @@
       v-if="loading"
       class="flex justify-center rounded-lg items-center absolute top-0 bottom-0 right-0 left-0 w-full h-full base-button__loading-content"
     >
-      <app-loader></app-loader>
+      <AppLoader></AppLoader>
       <span v-if="loadingText" class="ml-2">{{ loadingText }}</span>
       <span v-else class="ml-2">Loading...</span>
     </span>
 
-    <social-icons-base
+    <SocialIconsBase
       v-if="prependIcon"
       class="mr-2 base-button__prepend"
       height="30px"
