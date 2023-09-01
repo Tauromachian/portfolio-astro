@@ -1,10 +1,10 @@
 <template>
   <list-wrapper>
     <list-item
-      v-for="(theme, index) in activeThemes"
+      v-for="(theme, index) in themes"
       :key="theme.value + index"
       class="text-xl"
-      :active="theme.active"
+      :active="theme.value === selectedTheme"
       @click="setTheme(theme.value)"
     >
       {{ theme.text }}
@@ -33,13 +33,6 @@ export default {
   },
   emits: ["input", "click"],
   computed: {
-    activeThemes() {
-      return this.themes.map((theme) => {
-        const internalTheme = Object.assign({}, theme);
-        internalTheme.active = theme.value === this.selectedTheme;
-        return internalTheme;
-      });
-    },
     selectedTheme: {
       get() {
         return this.value;
