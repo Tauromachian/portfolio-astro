@@ -22,7 +22,7 @@
         </div>
       </a>
     </div>
-    <base-card class="mt-8 p-4">
+    <base-card class="mt-8 p-4 card">
       <h3 class="text-base sm:text-2xl font-bold">
         {{ $t("formTitle") }}
       </h3>
@@ -163,4 +163,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.card {
+  background: var(--bg-card);
+}
+</style>
