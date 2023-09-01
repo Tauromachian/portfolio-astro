@@ -1,8 +1,6 @@
 ---
 import { getLangFromUrl } from "../i18n/utils";
 
-import "../styles/main.scss";
-
 const keywords =
   "portfolio, jogarcia, web, web development, developer, development, backend, frontend, database";
 const description =
@@ -45,6 +43,10 @@ const lang = getLangFromUrl(Astro.url);
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Pridi&family=Righteous&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZáéíóúabcdefghijklmnopqrstuvwxyz0123456789./',?"
     />
+
+    <style is:global lang="scss">
+      @import "../styles/main.scss";
+    </style>
   </head>
 
   <body> <slot /></body>
