@@ -11,7 +11,7 @@ import CardText from "./CardText.astro";
   href={siteUrl}
   target="_blank"
 >
-  <BaseCard class="rounded-lg">
+  <BaseCard class="rounded-lg card">
     <picture>
       <source
         sizes="(min-width: 347px)"
@@ -42,6 +42,10 @@ import CardText from "./CardText.astro";
 </a>
 
 <style lang="scss" scoped>
+  .card {
+    background: var(--bg-card);
+  }
+
   .h-100px {
     height: 100px;
   }
