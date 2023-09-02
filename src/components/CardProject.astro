@@ -7,7 +7,7 @@ import CardText from "./CardText.astro";
 
 <a
   class="flex ml-auto cursor-pointer"
-  :title="alt"
+  title={alt}
   href={siteUrl}
   target="_blank"
 >
@@ -30,7 +30,7 @@ import CardText from "./CardText.astro";
         width="1256"
         height="1004"
         alt={alt}
-        :srcset={`images/original/${src}.jpg 1900w, images/1280/${src}.jpg 1280w, images/640/${src}.jpg 640w`}
+        srcset={`images/original/${src}.jpg 1900w, images/1280/${src}.jpg 1280w, images/640/${src}.jpg 640w`}
       />
     </picture>
     <CardText class="flex justify-center">
