@@ -12,11 +12,6 @@ import SectionProjects from "../../components/SectionProjects.astro";
 import SectionAdditionalWork from "../../components/SectionAdditionalWork.astro";
 import SectionContacts from "../../components/SectionContacts.vue";
 
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-
 const themes = [
   { value: "default", text: "Default", iconColor: "#33bebc" },
   { value: "crazy", text: "Crazy", iconColor: "#33bebc" },
