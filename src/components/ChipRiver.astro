@@ -4,6 +4,6 @@ import BaseChip from "./BaseChip.astro";
 const { values } = Astro.props;
 ---
 
-<div class="flex flex-wrap">
-  {values.map((value) => <BaseChip text={value} class="mr-1 mb-1" />)}
+<div class="flex flex-wrap gap-1">
+  {values.map((value) => <BaseChip text={value} />)}
 </div>
