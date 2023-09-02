@@ -1,5 +1,6 @@
 import { ui, defaultLang, showDefaultLang } from "./ui";
 
+// Server side
 export function useTranslatedPath(lang) {
   return function translatePath(path, l) {
     return !showDefaultLang && l === defaultLang ? path : `/${l}${path}`;
@@ -18,6 +19,7 @@ export function useTranslations(lang) {
   };
 }
 
+// Client Side
 export function useClientSideTranslations(langObject) {
   return function t(key) {
     return findTranslation(langObject, key);
@@ -45,4 +47,15 @@ function findTranslation(langObject, keyString) {
   }
 
   return "No translation found";
+}
+
+export function changeLanguage() {
+  const routePieces = document.URL.split("/");
+  const language = routePieces.at(-1);
+
+  if (language === "es") {
+    window.location = "/";
+  } else {
+    window.location = "/es";
+  }
 }
