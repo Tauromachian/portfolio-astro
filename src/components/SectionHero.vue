@@ -33,7 +33,7 @@
           outline
           prepend-icon="mdiEmail"
           size="x-large"
-          @click="scrollToPosition('social-networks')"
+          @click="scrollToPosition('contacts')"
         >
           {{ $t("hero.button2") }}
         </base-button-call-to-action>
