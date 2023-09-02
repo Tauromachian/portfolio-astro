@@ -76,7 +76,6 @@ export default {
   },
 
   mounted() {
-    console.log(this.t);
     window.addEventListener("resize", () => {
       this.zdogKey++;
     });
