@@ -27,6 +27,7 @@
         <BaseButton
           title="Translate"
           class="relative mx-0 transition-colors transition-200 navbar__link"
+          @click="changeLanguage"
           icon
         >
           <SocialIconsBase icon="mdiTranslate" />
@@ -80,6 +81,17 @@ const theme = ref("default");
 const saveTheme = (value) => {
   theme.value = value;
   setTheme(value);
+};
+
+const changeLanguage = () => {
+  const routePieces = document.URL.split("/");
+  const language = routePieces.at(-1);
+
+  if (language === "es") {
+    window.location = "/";
+  } else {
+    window.location = "/es";
+  }
 };
 
 onMounted(() => {
