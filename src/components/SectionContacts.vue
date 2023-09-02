@@ -3,6 +3,7 @@
     class="items-center justify-center"
     :title="$t('contacts')"
     title-alignment="self-center"
+    id="contacts"
   >
     <div class="flex flex-wrap gap-4 justify-center text-7xl md:text-8xl">
       <a

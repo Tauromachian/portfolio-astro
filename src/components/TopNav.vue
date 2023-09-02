@@ -53,6 +53,7 @@
 import { onMounted, ref } from "vue";
 
 import { setTheme } from "../utils/themeHelper";
+import { scrollToPosition } from "@/utils/scrollToPosition";
 
 import BaseButton from "./BaseButton.vue";
 import BaseMenu from "./BaseMenu.vue";

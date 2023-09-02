@@ -29,7 +29,7 @@ const links = [
   { link: "#skills", text: "skills" },
   { link: "#projects", text: "projects.title" },
   { link: "#additional-work", text: "additionalWork.title" },
-  { link: "#social-networks", text: "contacts" },
+  { link: "#contacts", text: "contacts" },
 ];
 ---
 
@@ -48,7 +48,7 @@ const links = [
     <SectionSkills id="skills" />
     <SectionProjects id="projects" />
     <SectionAdditionalWork id="additional-work" />
-    <SectionContacts client:visible id="social-networks" />
+    <SectionContacts client:visible id="contacts" />
 
     <div class="fixed bottom-0 left-0 right-0 z-50 bottom-nav">
       <BottomNav client:load links={links} themes={themes} />

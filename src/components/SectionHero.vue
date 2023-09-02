@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col lg:flex-row mb-32 p-3 relative">
+  <section class="flex flex-col lg:flex-row mb-32 p-3 relative" id="home">
     <div
       class="flex flex-col h-full justify-center hero__text md:mr-5 xl:mr-0 md:basis-1/2 shrink-0"
     >
