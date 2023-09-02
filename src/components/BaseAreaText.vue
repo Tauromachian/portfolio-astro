@@ -4,7 +4,7 @@
     <textarea
       :id="label"
       v-model="text"
-      class="p-1 rounded no-outline text"
+      class="p-1 rounded outline-none text"
       cols="10"
       rows="4"
       v-bind="attrs"
