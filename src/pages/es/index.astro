@@ -61,9 +61,6 @@ const links = [
 
   lang.set(es);
 
-  // Handle events
-  addEventListener("load", () => {
-    const theme = localStorage.getItem("theme") ?? "default";
-    setTheme(theme);
-  });
+  const theme = localStorage.getItem("theme") ?? "default";
+  setTheme(theme);
 </script>
