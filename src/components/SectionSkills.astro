@@ -66,7 +66,7 @@ const skills = [
     {
       skills.map((skill) => (
         <BaseCard class="bg-secondary md:mx-4 mt-4 md:mt-8">
-          <CardText class="flex p-0 md:p-3">
+          <div class="flex p-0 md:p-3">
             <div>
               <SocialIconsBase
                 height="100px"
@@ -76,12 +76,12 @@ const skills = [
               />
             </div>
 
-            <div class="flex flex-col">
+            <div class="flex flex-col ml-5">
               <h3 class="text-3xl">{skill.name}</h3>
               <p>{t(skill.description)}</p>
               <ChipRiver values={skill.technologies} class="mt-2" />
             </div>
-          </CardText>
+          </div>
         </BaseCard>
       ))
     }
