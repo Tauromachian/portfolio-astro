@@ -43,3 +43,17 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.text {
+  color: var(--text-color-gray-900);
+  transition: all 0.1s;
+  --shadow-color: #9ca3af;
+  box-shadow: 6px 6px 0px 1px var(--shadow-color);
+}
+
+.text:focus {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0px 1px var(--shadow-color);
+}
+</style>
