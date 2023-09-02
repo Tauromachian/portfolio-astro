@@ -55,6 +55,8 @@ import BaseButtonCallToAction from "./BaseButtonCallToAction.vue";
 import SocialIconsBase from "./SocialIconsBase.vue";
 import ZDog from "./ZDog.vue";
 
+import { scrollToPosition } from "@/utils/scrollToPosition";
+
 import { useStore } from "@nanostores/vue";
 import { t } from "../stores/langStore";
 
@@ -82,10 +84,7 @@ export default {
   },
 
   methods: {
-    scrollToPosition(postitionId) {
-      const elmnt = document.getElementById(postitionId.spli$t("#").pop());
-      elmnt.scrollIntoView({ behavior: "smooth" });
-    },
+    scrollToPosition,
   },
 };
 </script>
