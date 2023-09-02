@@ -24,7 +24,7 @@
         title="Translate"
         class="navbar__link"
         icon
-        @click="changeLocale($i18n)"
+        @click="changeLanguage"
       >
         <SocialIconsBase icon="mdiTranslate"></SocialIconsBase>
       </base-button>
@@ -53,6 +53,7 @@ import { onMounted, ref } from "vue";
 
 import { setTheme } from "../utils/themeHelper";
 import { scrollToPosition } from "@/utils/scrollToPosition";
+import { changeLanguage } from "@/i18n/utils";
 
 import BaseButton from "./BaseButton.vue";
 import BaseMenu from "./BaseMenu.vue";
