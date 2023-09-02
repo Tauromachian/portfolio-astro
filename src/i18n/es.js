@@ -1,6 +1,6 @@
 export default {
   hero: {
-    title: "Creando ideas",
+    title: "Haciendo tus ideas realidad",
     description1: "Soy un desarrollador web/fullstacker",
     description2: "Te construiré un sitio web y lucirá genial",
     button1: "Descargar CV",
