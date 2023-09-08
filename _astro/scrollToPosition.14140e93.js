@@ -1,0 +1,1 @@
+function o(e){document.documentElement.setAttribute("theme",e),localStorage.setItem("theme",e)}const s=e=>{document.getElementById(e.split("#").pop()).scrollIntoView({behavior:"smooth"})};export{s as a,o as s};
