@@ -1,5 +1,5 @@
 ---
-import BaseButtonCallToAction from "./BaseButtonCallToAction.vue";
+import BaseButtonCallToAction from "./BaseButtonCallToAction.astro";
 import SocialIconsBase from "./SocialIconsBase.vue";
 import ZDog from "./ZDog.vue";
 
@@ -30,24 +30,23 @@ const t = useTranslations(lang);
       class="flex flex-col sm:flex-row lg:flex-col xl:flex-row max-w-sm sm:max-w-none"
     >
       <BaseButtonCallToAction
-        download-link="/cv.pdf"
+        downloadLink="/cv.pdf"
         class="mt-12 text-center"
-        prepend-icon="mdiDownload"
+        prependIcon="mdiDownload"
         size="x-large"
       >
         {t("hero.button1")}
       </BaseButtonCallToAction>
-      <BaseButtonCallToAction
-        class="mt-2 sm:mt-12 lg:mt-2 xl:mt-12 sm:ml-2 lg:ml-0 xl:ml-2"
-        is-call-to-action
-        outline
-        prepend-icon="mdiEmail"
-        size="x-large"
-        @click="scrollToPosition('contacts')"
-        id="contactButton"
-      >
-        {t("hero.button2")}
-      </BaseButtonCallToAction>
+      <div id="contactButton">
+        <BaseButtonCallToAction
+          class="mt-2 sm:mt-12 lg:mt-2 xl:mt-12 sm:ml-2 lg:ml-0 xl:ml-2"
+          outline
+          prependIcon="mdiEmail"
+          size="x-large"
+        >
+          {t("hero.button2")}
+        </BaseButtonCallToAction>
+      </div>
     </div>
   </div>
 
