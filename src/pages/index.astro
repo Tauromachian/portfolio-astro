@@ -4,7 +4,7 @@ import Base from "../layouts/Base.astro";
 import BaseGradient from "../components/BaseGradient.astro";
 import TopNav from "../components/TopNav.vue";
 import BottomNav from "../components/BottomNav.vue";
-import VueBackToTop from "../components/VueBackToTop.vue";
+import VueBackToTop from "../components/VueBackToTop.astro";
 import SectionHero from "../components/SectionHero.vue";
 import SectionAbout from "../components/SectionAbout.astro";
 import SectionSkills from "../components/SectionSkills.astro";
@@ -49,7 +49,7 @@ const links = [
       <BottomNav client:load links={links} themes={themes} />
     </div>
     <div class="mt-20 pt-10 sm:mt-0 content"></div>
-    <VueBackToTop client:load />
+    <VueBackToTop />
   </main>
 </Base>
 
