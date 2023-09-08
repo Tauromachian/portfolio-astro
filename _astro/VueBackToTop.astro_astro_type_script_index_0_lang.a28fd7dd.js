@@ -1,1 +1,0 @@
-const o=document.getElementById("floating-button");o.addEventListener("click",e);t();window.addEventListener("scroll",t);function t(){document.documentElement.scrollTop>20?(o.classList.add("block"),o.classList.remove("hidden")):(o.classList.add("hidden"),o.classList.remove("block"))}function e(){window.scrollTo({top:0,left:0,behavior:"smooth"})}
