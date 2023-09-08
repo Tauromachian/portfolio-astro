@@ -6,6 +6,7 @@
 
 <script setup>
 import { onMounted, ref } from "vue";
+import debounce from "basic-debouncer";
 
 import Zdog from "zdog";
 
@@ -17,6 +18,10 @@ let illoElem;
 let illo;
 
 onMounted(() => {
+  window.addEventListener("resize", () => {
+    debounce(zdogRender, 10);
+  });
+
   zdogRender();
 });
 

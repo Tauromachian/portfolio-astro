@@ -69,10 +69,6 @@ export default {
 
   data() {
     return {
-      colorIcons: "",
-      isHidden: true,
-
-      theme: "default",
       zdogKey: 0,
     };
   },
