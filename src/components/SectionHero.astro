@@ -37,9 +37,12 @@ const t = useTranslations(lang);
       >
         {t("hero.button1")}
       </BaseButtonCallToAction>
-      <div id="contactButton">
+      <div
+        id="contactButton"
+        class="mt-2 sm:mt-12 lg:mt-2 xl:mt-12 sm:ml-2 lg:ml-0 xl:ml-2"
+      >
         <BaseButtonCallToAction
-          class="mt-2 sm:mt-12 lg:mt-2 xl:mt-12 sm:ml-2 lg:ml-0 xl:ml-2"
+          class="w-full"
           outline
           prependIcon="mdiEmail"
           size="x-large"
