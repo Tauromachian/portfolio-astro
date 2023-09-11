@@ -21,7 +21,7 @@
           </a>
         </li>
       </ul>
-      <div class="flex items-center">
+      <div class="flex items-center text-2xl">
         <BaseButton
           title="Translate"
           class="relative mx-0 transition-colors transition-200 navbar__link"
