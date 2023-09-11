@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex bg-primary">
+  <nav class="bg-primary">
     <div class="container mx-auto flex justify-center z-50">
       <div class="flex items-center">
         <img
