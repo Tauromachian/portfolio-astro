@@ -1,6 +1,6 @@
 <template>
   <nav class="bg-primary">
-    <div class="container mx-auto flex justify-center z-50">
+    <div class="container mx-auto flex justify-center z-50 px-3">
       <div class="flex items-center">
         <img
           class="w-16 h-full"
