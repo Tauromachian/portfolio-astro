@@ -13,7 +13,7 @@
       <SocialIconsBase v-else icon="mdiAlert" />
     </span>
 
-    <span> {message.text} </span>
+    <span> {{ message.text }} </span>
   </div>
 </template>
 
