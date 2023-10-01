@@ -128,13 +128,16 @@ export default {
       };
       let response;
       try {
-        response = await fetch(`${runtimeConfig.mailerUrl}contact-me`, {
-          method: "POST",
-          body: JSON.stringify(body),
-          headers: {
-            "Content-Type": "application/json",
+        response = await fetch(
+          `${import.meta.env.PUBLIC_SERVICE_MAILER_URL}contact-me`,
+          {
+            method: "POST",
+            body: JSON.stringify(body),
+            headers: {
+              "Content-Type": "application/json",
+            },
           },
-        });
+        );
       } catch (error) {
         this.displayErrorMessage();
         return;
