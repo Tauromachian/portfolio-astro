@@ -124,7 +124,7 @@ export default {
       const body = {
         ...this.form,
         text: `${this.form.name}\n${this.form.body}`,
-        to: runtimeConfig.targetEmail,
+        to: import.meta.env.PUBLIC_TARGET_EMAIL,
       };
       let response;
       try {
