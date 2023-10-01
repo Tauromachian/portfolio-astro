@@ -119,8 +119,6 @@ export default {
 
   methods: {
     async submitForm() {
-      const runtimeConfig = useRuntimeConfig();
-
       this.loading = true;
 
       const body = {
