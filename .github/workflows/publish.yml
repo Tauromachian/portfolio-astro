@@ -6,9 +6,8 @@ on:
       - master
 
 env:
-  NUXT_TARGET_EMAIL: ${{ secrets.NUXT_TARGET_EMAIL }}
-  NUXT_SERVICE_MAILER_URL: ${{ secrets.NUXT_SERVICE_MAILER_URL }}
-  NUXT_REPOS_LISTER_URL: ${{ secrets.NUXT_REPOS_LISTER_URL }}
+  PUBLIC_TARGET_EMAIL: ${{ secrets.PUBLIC_TARGET_EMAIL }}
+  PUBLIC_SERVICE_MAILER_URL: ${{ secrets.PUBLIC_SERVICE_MAILER_URL}}
 
 jobs:
   build:
