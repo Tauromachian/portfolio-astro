@@ -123,8 +123,8 @@ export default {
 
       const body = {
         ...this.form,
-        text: `${this.form.name}\n${this.form.body}`,
-        to: import.meta.env.PUBLIC_TARGET_EMAIL,
+        body: `Name: ${this.form.name}\nMessage: ${this.form.body}\nFrom:${this.form.from}`,
+        addresses: import.meta.env.PUBLIC_TARGET_EMAIL,
       };
       let response;
       try {
