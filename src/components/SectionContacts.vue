@@ -129,7 +129,7 @@ export default {
       let response;
       try {
         response = await fetch(
-          `${import.meta.env.PUBLIC_SERVICE_MAILER_URL}contact-me`,
+          `${import.meta.env.PUBLIC_SERVICE_MAILER_URL}send-email`,
           {
             method: "POST",
             body: JSON.stringify(body),
