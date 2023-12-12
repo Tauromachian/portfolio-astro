@@ -10,7 +10,7 @@ export default {
   visit: "Visitar",
   about: "Sobre mí",
   aboutText1:
-    "¡Hola! Mi nombre es José García. Soy desarrollador fullstack. Diseño, bases de datos, frontend, backend, SEO y multilenguaje es lo que hago. Soy un desarrollador con experiencia.",
+    "¡Hola! Mi nombre es José García. Soy desarrollador fullstack. Diseño, bases de datos, frontend, backend, SEO y multilenguaje es lo que hago.",
   aboutText2:
     "He estado trabajando en el campo durante más de 3 años. Ayudando a las pequeñas empresas a crecer y prosperar. También he trabajado para empresas más grandes proporcionando mis habilidades.",
   aboutText3:
