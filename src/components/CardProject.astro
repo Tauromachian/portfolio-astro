@@ -16,12 +16,12 @@ import CardText from "./CardText.astro";
       <source
         sizes="(min-width: 347px)"
         type="image/avif"
-        srcset={`avif/original/${src}.avif 1900w, avif/1280/${src}.avif 1280w, avif/640/${src}.avif 640w`}
+        srcset={`projects/${src}.full.avif 1900w, projects/${src}.1280.avif 1280w, projects/${src}.640.avif 640w`}
       />
       <source
         sizes="(min-width: 347px)"
         type="image/webp"
-        srcset={`webp/original/${src}.webp 1900w, webp/1280/${src}.webp 1280w, webp/640/${src}.webp 640w`}
+        srcset={`projects/${src}.full.webp 1900w, projects/${src}.1280.webp 1280w, projects/${src}.640.webp 640w`}
       />
       <img
         class="w-full h-auto rounded-t-lg"
@@ -30,7 +30,7 @@ import CardText from "./CardText.astro";
         width="1256"
         height="1004"
         alt={alt}
-        srcset={`images/original/${src}.jpg 1900w, images/1280/${src}.jpg 1280w, images/640/${src}.jpg 640w`}
+        srcset={`projects/${src}.full.jpg 1900w, projects/${src}.1280.jpg 1280w, projects/${src}.640.jpg 640w`}
       />
     </picture>
     <CardText class="flex justify-center">
