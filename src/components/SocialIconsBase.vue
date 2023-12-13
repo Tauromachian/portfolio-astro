@@ -30,6 +30,7 @@ import {
   mdiBug,
   mdiDownload,
   mdiEmailArrowRight,
+  mdiChevronTripleDown,
 } from "@mdi/js";
 
 const props = defineProps({
@@ -70,6 +71,7 @@ const icons = {
   mdiBug,
   mdiDownload,
   mdiEmailArrowRight,
+  mdiChevronTripleDown,
 };
 
 const path = (function () {
