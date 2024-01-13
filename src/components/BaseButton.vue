@@ -10,7 +10,7 @@
     :download="!!downloadLink"
   >
     <span
-      v-if="loading"
+      v-if="loadingComputed"
       class="flex justify-center rounded-lg items-center absolute top-0 bottom-0 right-0 left-0 w-full h-full base-button__loading-content"
     >
       <AppLoader></AppLoader>
@@ -38,6 +38,11 @@ import { computed } from "vue";
 
 import AppLoader from "./AppLoader.vue";
 import SocialIconsBase from "./SocialIconsBase.vue";
+
+import { useStore } from "@nanostores/vue";
+import { loading } from "@/stores/formStore.js";
+
+const storeLoading = useStore(loading);
 
 const props = defineProps({
   value: {
@@ -81,6 +86,10 @@ const props = defineProps({
       return ["regular", "x-large"].includes(value);
     },
   },
+});
+
+const loadingComputed = computed(() => {
+  return storeLoading.value || props.loading;
 });
 
 const buttonClasses = computed(() => {
