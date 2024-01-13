@@ -1,0 +1,17 @@
+---
+const { title, titleAlignment, id, class: classes } = Astro.props;
+---
+
+<section class="flex flex-col my-32 p-3" class={classes} id={id}>
+  {
+    title && (
+      <h2
+        class="mb-3 text-3xl text-5xl self-start sm:self-center"
+        class:list={titleAlignment}
+      >
+        {title}
+      </h2>
+    )
+  }
+  <slot />
+</section>
