@@ -33,88 +33,82 @@
   </component>
 </template>
 
-<script>
+<script setup>
+import { computed } from "vue";
+
 import AppLoader from "./AppLoader.vue";
 import SocialIconsBase from "./SocialIconsBase.vue";
 
-export default {
-  name: "BaseButton",
-  components: {
-    AppLoader,
-    SocialIconsBase,
+const props = defineProps({
+  value: {
+    type: Boolean,
+    default: false,
   },
-  props: {
-    value: {
-      type: Boolean,
-      default: false,
-    },
-    isActivable: {
-      type: Boolean,
-      default: true,
-    },
-    icon: {
-      type: Boolean,
-      default: false,
-    },
-    loading: {
-      type: Boolean,
-      default: false,
-    },
-    loadingText: {
-      type: String,
-      default: "",
-    },
+  isActivable: {
+    type: Boolean,
+    default: true,
+  },
+  icon: {
+    type: Boolean,
+    default: false,
+  },
+  loading: {
+    type: Boolean,
+    default: false,
+  },
+  loadingText: {
+    type: String,
+    default: "",
+  },
 
-    outline: {
-      type: Boolean,
-      default: false,
-    },
-    downloadLink: {
-      type: String,
-      default: "",
-    },
-    prependIcon: {
-      type: String,
-      default: "",
-    },
-    size: {
-      type: String,
-      default: "regular",
-      validator(value) {
-        if (value === "") return true;
-        return ["regular", "x-large"].includes(value);
-      },
+  outline: {
+    type: Boolean,
+    default: false,
+  },
+  downloadLink: {
+    type: String,
+    default: "",
+  },
+  prependIcon: {
+    type: String,
+    default: "",
+  },
+  size: {
+    type: String,
+    default: "regular",
+    validator(value) {
+      if (value === "") return true;
+      return ["regular", "x-large"].includes(value);
     },
   },
-  computed: {
-    buttonClasses() {
-      const classes = {};
-      if (this.icon) {
-        classes.padding = 0;
-        classes["icon-button"] = true;
-      }
+});
 
-      if (this.outline) {
-        classes.outline = true;
-      }
+const buttonClasses = computed(() => {
+  const classes = {};
+  if (props.icon) {
+    classes.padding = 0;
+    classes["icon-button"] = true;
+  }
 
-      return classes;
-    },
-    sizeClasses() {
-      if (this.size === "x-large") return { "h-16": true, "px-7": true };
+  if (props.outline) {
+    classes.outline = true;
+  }
 
-      return { "h-9": true, "px-4": true };
-    },
-    outlineClasses() {
-      if (this.outline) {
-        return {
-          outline: true,
-        };
-      }
-      return {};
-    },
-  },
-};
+  return classes;
+});
+const sizeClasses = computed(() => {
+  if (props.size === "x-large") return { "h-16": true, "px-7": true };
+
+  return { "h-9": true, "px-4": true };
+});
+const outlineClasses = computed(() => {
+  if (props.outline) {
+    return {
+      outline: true,
+    };
+  }
+  return {};
+});
 </script>
 
 <style scoped>
