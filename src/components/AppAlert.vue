@@ -8,10 +8,12 @@
     }"
     role="alert"
   >
-    <span class="mr-3">
-      <SocialIconsBase v-if="message.success" icon="mdiCheck" />
-      <SocialIconsBase v-else icon="mdiAlert" />
-    </span>
+    <SocialIconsBase
+      class="mx-3"
+      :icon="messageComputed.success ? 'mdiCheck' : 'mdiAlert'"
+      height="30px"
+      width="30px"
+    />
 
     <span> {{ message.text }} </span>
   </div>
