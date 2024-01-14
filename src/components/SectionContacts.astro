@@ -112,11 +112,7 @@ const socialLinks = [
     const body = {
       ...formValues,
       from: formValues.email,
-      message: {
-        subject: {
-          data: "Job proposal",
-        },
-      },
+      subject: "Work email",
       body: `Name: ${formValues.name}\nMessage: ${formValues.message}\nFrom:${formValues.email}`,
       addresses: import.meta.env.PUBLIC_TARGET_EMAIL,
     };
