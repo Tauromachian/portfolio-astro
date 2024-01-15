@@ -4,7 +4,7 @@
       <div class="flex items-center">
         <img
           class="w-16 h-full"
-          src="/logo-extra-compressed.png"
+          :src="LogoExtraCompressed.src"
           alt="Logo of the portfolio"
         />
         <h4 class="text-3xl ml-5">José García</h4>
@@ -59,6 +59,8 @@ import BaseButton from "./BaseButton.vue";
 import BaseMenu from "./BaseMenu.vue";
 import ThemeSelector from "./ThemeSelector.vue";
 import SocialIconsBase from "./SocialIconsBase.vue";
+
+import LogoExtraCompressed from "../../public/logo-extra-compressed.png";
 
 import { useStore } from "@nanostores/vue";
 import { t } from "../stores/langStore";
