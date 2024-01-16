@@ -49,7 +49,9 @@ const links = [
       <BottomNav client:load links={links} themes={themes} />
     </div>
     <div class="mt-20 pt-10 sm:mt-0 content"></div>
-    <VueBackToTop />
+    <div class="back-to-top">
+      <VueBackToTop />
+    </div>
   </main>
 </Base>
 
@@ -63,3 +65,15 @@ const links = [
   const theme = localStorage.getItem("theme") ?? "default";
   setTheme(theme);
 </script>
+
+<style>
+  .back-to-top {
+    visibility: hidden;
+  }
+
+  @media screen and (min-width: 835px) {
+    .back-to-top {
+      visibility: visible;
+    }
+  }
+</style>
