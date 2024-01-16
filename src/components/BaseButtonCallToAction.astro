@@ -6,6 +6,7 @@ const {
   prependIcon,
   size,
   outline,
+  id,
   class: className,
 } = Astro.props;
 ---
@@ -17,6 +18,7 @@ const {
   size={size}
   outline={outline}
   class={className}
+  id={id}
 >
   <span class="text-2xl font-bold">
     <slot />
