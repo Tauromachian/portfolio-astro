@@ -34,15 +34,16 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, watchEffect } from "vue";
 
 import AppLoader from "./AppLoader.vue";
 import SocialIconsBase from "./SocialIconsBase.vue";
 
 import { useStore } from "@nanostores/vue";
-import { loading } from "@/stores/formStore.js";
+import { loading, loadingState } from "@/stores/formStore.js";
 
 const storeLoading = useStore(loading);
+const storeLoadingState = useStore(loadingState);
 
 const props = defineProps({
   value: {
@@ -78,6 +79,10 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  buttonId: {
+    type: String,
+    default: "",
+  },
   size: {
     type: String,
     default: "regular",
@@ -89,7 +94,9 @@ const props = defineProps({
 });
 
 const loadingComputed = computed(() => {
-  return storeLoading.value || props.loading;
+  return (
+    storeLoadingState?.value?.loadingDictionary[props.buttonId] || props.loading
+  );
 });
 
 const buttonClasses = computed(() => {

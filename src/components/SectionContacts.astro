@@ -12,6 +12,8 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+const BUTTON_ID = "formbutton";
+
 const socialLinks = [
   {
     link: "https://www.linkedin.com/in/dev-jose-garcia",
@@ -37,6 +39,7 @@ const socialLinks = [
   title-alignment="self-center"
   id="contacts"
 >
+  <section-contacts data-buttonid={BUTTON_ID}></section-contacts>
   <div class="flex flex-wrap gap-4 justify-center text-7xl md:text-8xl">
     {
       socialLinks.map((link) => (
@@ -80,8 +83,9 @@ const socialLinks = [
       <span class="flex w-full">
         <BaseButton
           client:visible
+          button-id={BUTTON_ID}
           class="mt-5 ml-auto"
-          :loading="state.loading"
+          id="form-button"
           prepend-icon="mdiEmailArrowRight"
           type="submit"
         >
@@ -93,9 +97,17 @@ const socialLinks = [
 </BaseSection>
 
 <script>
-  import { message, loading } from "@/stores/formStore";
+  import { message, loadingState } from "@/stores/formStore";
+
+  class SectionContacts extends HTMLElement {
+    constructor() {
+      super();
+    }
+  }
+  customElements.define("section-contacts", SectionContacts);
 
   const form = document.getElementById("contact-form");
+  const sectionContacts = document.querySelector("section-contacts");
   const messageWrapper = document.getElementById("message-wrapper");
 
   form.addEventListener("submit", (event) => {
@@ -104,7 +116,9 @@ const socialLinks = [
   });
 
   const submitForm = async () => {
-    loading.set(true);
+    const buttonId = sectionContacts.dataset.buttonid;
+
+    loadingState.setKey("loadingDictionary", { [buttonId]: true });
 
     const formData = new FormData(document.forms[0]);
     const formValues = Object.fromEntries(formData);
@@ -141,7 +155,7 @@ const socialLinks = [
     }
 
     displaySuccessMessage();
-    loading.set(false);
+    loadingState.setKey("loadingDictionary", { [buttonId]: false });
   };
 
   const displaySuccessMessage = () => {
