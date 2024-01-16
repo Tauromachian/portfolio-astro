@@ -54,14 +54,14 @@ const errorMessage = {
     {
       socialLinks.map((link) => (
         <a title={link.alt} href={link.link} class="transition scale-110">
-          <div style="height: 80px; width: 80px" class="color-primary">
+          <span style="height: 80px; width: 80px" class="color-primary">
             <SocialIconsBase
               color=""
               height="80px"
               width="80px"
               icon={link.icon}
             />
-          </div>
+          </span>
         </a>
       ))
     }
