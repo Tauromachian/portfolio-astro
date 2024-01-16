@@ -1,6 +1,6 @@
 ---
 import BaseSection from "./BaseSection.astro";
-import BaseCard from "./BaseCard.vue";
+import BaseCard from "./BaseCard.astro";
 import CardFeature from "./CardFeature.astro";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
@@ -49,7 +49,7 @@ const t = useTranslations(lang);
           loading="lazy"
           width="1256"
           height="1004"
-          alt="An image of the owner of this portfolio"
+          alt="Owner of this portfolio"
           srcset="
               /projects/picture-man-min.1280.jpg 1280w,
               /projects/picture-man-min.640.jpg   640w
