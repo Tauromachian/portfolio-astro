@@ -1,5 +1,5 @@
 ---
-import AppAlert from "./AppAlert.vue";
+import AppAlert from "./AppAlert.astro";
 import BaseButton from "./BaseButton.vue";
 import BaseAreaText from "./BaseAreaText.vue";
 import BaseInputText from "./BaseInputText.vue";
@@ -31,6 +31,16 @@ const socialLinks = [
     alt: "Reddit icon",
   },
 ];
+
+const successMessage = {
+  success: true,
+  text: "Success! email sent correctly",
+};
+
+const errorMessage = {
+  success: false,
+  text: "Error there was a problem sending the email",
+};
 ---
 
 <BaseSection
@@ -60,8 +70,12 @@ const socialLinks = [
     <h3 class="text-base sm:text-2xl font-bold">
       {t("formTitle")}
     </h3>
-    <div id="message-wrapper" class="mt-3">
-      <AppAlert client:visible />
+
+    <div class="message-wrapper" id="success-message" class="mt-3">
+      <AppAlert message={successMessage} />
+    </div>
+    <div class="message-wrapper" id="error-message" class="mt-3">
+      <AppAlert message={errorMessage} />
     </div>
 
     <form id="contact-form">
@@ -145,30 +159,21 @@ const socialLinks = [
         },
       );
     } catch (error) {
-      displayErrorMessage();
+      displayMessage("error-message");
       return;
     }
 
     if (response.error) {
-      displayErrorMessage();
+      displayMessage("error-message");
       return;
     }
 
-    displaySuccessMessage();
+    displayMessage("success-message");
     loadingState.setKey("loadingDictionary", { [buttonId]: false });
   };
 
-  const displaySuccessMessage = () => {
-    message.setKey("text", "Success! email sent correctly");
-    message.setKey("success", true);
-    message.setKey("active", true);
-    messageWrapper.style.display = "block";
-  };
-
-  const displayErrorMessage = () => {
-    message.setKey("text", "Error there was a problem sending the email");
-    message.setKey("success", false);
-    message.setKey("active", true);
+  const displayMessage = (id) => {
+    const messageWrapper = document.getElementById(id);
     messageWrapper.style.display = "block";
   };
 </script>
@@ -178,7 +183,7 @@ const socialLinks = [
     background: var(--bg-card);
   }
 
-  #message-wrapper {
+  .message-wrapper {
     display: none;
   }
 </style>
