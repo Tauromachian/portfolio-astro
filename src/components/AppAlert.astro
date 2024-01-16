@@ -1,0 +1,26 @@
+---
+import SocialIconsBase from "./SocialIconsBase.vue";
+
+const { message } = Astro.props;
+---
+
+<div
+  class="w-full text-left py-4 lg:px-4 rounded flex items-center"
+  class:list={[
+    {
+      "bg-primary": message.success,
+      "bg-red-700": !message.success,
+      "text-white": !message.success,
+    },
+  ]}
+  role="alert"
+>
+  <SocialIconsBase
+    class="mx-3"
+    icon={message.success ? "mdiCheck" : "mdiAlert"}
+    height="30px"
+    width="30px"
+  />
+
+  <span> {message.text}</span>
+</div>
