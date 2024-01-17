@@ -56,6 +56,6 @@ export function changeLanguage() {
   if (language === "es") {
     window.location = "/";
   } else {
-    window.location = "/es";
+    window.location = "es";
   }
 }
