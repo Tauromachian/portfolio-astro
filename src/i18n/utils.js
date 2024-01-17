@@ -55,8 +55,8 @@ export function changeLanguage() {
   const url = routePieces.toString().replaceAll(",", "/");
 
   if (language === "es") {
-    window.location = url;
+    window.location.assign(url);
   } else {
-    window.location = `${url}/es`;
+    window.location.assign(`${url}/es`);
   }
 }
