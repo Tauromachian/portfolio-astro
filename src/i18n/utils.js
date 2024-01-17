@@ -51,11 +51,12 @@ function findTranslation(langObject, keyString) {
 
 export function changeLanguage() {
   const routePieces = document.URL.split("/");
-  const language = routePieces.at(-1);
+  const language = routePieces.pop();
+  const url = routePieces.toString().replaceAll(",", "/");
 
   if (language === "es") {
-    window.location = "/";
+    window.location = url;
   } else {
-    window.location = "es";
+    window.location = `${url}/es`;
   }
 }
