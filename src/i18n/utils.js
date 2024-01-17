@@ -51,6 +51,12 @@ function findTranslation(langObject, keyString) {
 
 export function changeLanguage() {
   const routePieces = document.URL.split("/");
+
+  const indexOfPortfolioString = routePieces.indexOf("portfolio");
+  if (indexOfPortfolioString !== -1) {
+    routePieces.splice(indexOfPortfolioString, 1);
+  }
+
   const language = routePieces.pop();
   const url = routePieces.toString().replaceAll(",", "/");
 
