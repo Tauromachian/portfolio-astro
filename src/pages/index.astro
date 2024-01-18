@@ -64,6 +64,8 @@ const links = [
 
   const theme = localStorage.getItem("theme") ?? "default";
   setTheme(theme);
+
+  window.history.replaceState({ page: "en" }, "en", "/");
 </script>
 
 <style>
