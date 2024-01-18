@@ -1,15 +1,15 @@
 ---
-import Base from "../../layouts/Base.astro";
+import Base from "@/layouts/Base.astro";
 
-import BaseGradient from "../../components/BaseGradient.astro";
-import TopNav from "../../components/TopNav.vue";
-import BottomNav from "../../components/BottomNav.vue";
+import BaseGradient from "@/components/BaseGradient.astro";
+import TopNav from "@/components/TopNav.vue";
+import BottomNav from "@/components/BottomNav.vue";
 import VueBackToTop from "@/components/VueBackToTop.astro";
-import SectionHero from "../../components/SectionHero.astro";
-import SectionAbout from "../../components/SectionAbout.astro";
-import SectionSkills from "../../components/SectionSkills.astro";
-import SectionProjects from "../../components/SectionProjects.astro";
-import SectionAdditionalWork from "../../components/SectionAdditionalWork.astro";
+import SectionHero from "@/components/SectionHero.astro";
+import SectionAbout from "@/components/SectionAbout.astro";
+import SectionSkills from "@/components/SectionSkills.astro";
+import SectionProjects from "@/components/SectionProjects.astro";
+import SectionAdditionalWork from "@/components/SectionAdditionalWork.astro";
 import SectionContacts from "@/components/SectionContacts.astro";
 
 const themes = [
@@ -55,9 +55,9 @@ const links = [
 </Base>
 
 <script>
-  import { setTheme } from "../../utils/themeHelper";
-  import { lang } from "../../stores/langStore.js";
-  import es from "../../i18n/es";
+  import { setTheme } from "@/utils/themeHelper";
+  import { lang } from "@/stores/langStore.js";
+  import es from "@/i18n/es";
 
   lang.set(es);
 
