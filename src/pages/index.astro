@@ -55,6 +55,12 @@ const links = [
   </main>
 </Base>
 
+<script is:inline>
+window.addEventListener("load", () => {
+    window.history.replaceState({ page: "en" }, "en", "/");
+});
+</script>
+
 <script>
   import { setTheme } from "@/utils/themeHelper.js";
   import { lang } from "@/stores/langStore.js";
@@ -64,10 +70,6 @@ const links = [
 
   const theme = localStorage.getItem("theme") ?? "default";
   setTheme(theme);
-
-  window.addEventListener("load", () => {
-    window.history.replaceState({ page: "en" }, "en", "/");
-  });
 </script>
 
 <style>
