@@ -64,5 +64,7 @@ const links = [
   const theme = localStorage.getItem("theme") ?? "default";
   setTheme(theme);
 
-  window.history.replaceState({ page: "es" }, "es", "/es");
+  window.addEventListener("load", () => {
+    window.history.replaceState({ page: "es" }, "es", "/es");
+  });
 </script>
