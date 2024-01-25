@@ -9,7 +9,7 @@ const description =
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
@@ -49,5 +49,24 @@ const lang = getLangFromUrl(Astro.url);
     </style>
   </head>
 
-  <body> <slot /></body>
+  <body>
+    <slot />
+    <script>
+      import { selectedTheme } from "@/stores/themeStore";
+      import { setTheme } from "@/utils/themeHelper";
+
+      window.addEventListener("load", () => {
+        const theme = localStorage.getItem("theme") ?? "default";
+        console.log("theme", theme);
+
+        if (!theme) return;
+
+        selectedTheme.set(theme);
+      });
+
+      selectedTheme.listen((themeValue) => {
+        setTheme(themeValue);
+      });
+    </script>
+  </body>
 </html>

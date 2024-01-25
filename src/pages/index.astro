@@ -2,7 +2,7 @@
 import Base from "@/layouts/Base.astro";
 
 import BaseGradient from "@/components/BaseGradient.astro";
-import TopNav from "@/components/TopNav.vue";
+import TopNav from "@/components/TopNav.astro";
 import BottomNav from "@/components/BottomNav.vue";
 import VueBackToTop from "@/components/VueBackToTop.astro";
 import SectionHero from "@/components/SectionHero.astro";
@@ -56,20 +56,16 @@ const links = [
 </Base>
 
 <script is:inline>
-window.addEventListener("load", () => {
+  window.addEventListener("load", () => {
     window.history.replaceState({}, "", "/");
-});
+  });
 </script>
 
 <script>
-  import { setTheme } from "@/utils/themeHelper.js";
   import { lang } from "@/stores/langStore.js";
   import en from "@/i18n/en";
 
   lang.set(en);
-
-  const theme = localStorage.getItem("theme") ?? "default";
-  setTheme(theme);
 </script>
 
 <style>
