@@ -1,7 +1,25 @@
 ---
+import BottomNav from "@/components/BottomNav.vue";
+import VueBackToTop from "@/components/VueBackToTop.astro";
+import BaseGradient from "@/components/BaseGradient.astro";
+import TopNav from "@/components/TopNav.astro";
+
 import { getLangFromUrl } from "../i18n/utils";
 
-import VueBackToTop from "@/components/VueBackToTop.astro";
+const themes = [
+  { value: "default", text: "Default", iconColor: "#33bebc" },
+  { value: "crazy", text: "Crazy", iconColor: "#33bebc" },
+  { value: "dark", text: "Dark", iconColor: "#cc925c" },
+];
+
+const links = [
+  { link: "#home", text: "home" },
+  { link: "#about", text: "about" },
+  { link: "#skills", text: "skills" },
+  { link: "#projects", text: "projects.title" },
+  { link: "#additional-work", text: "additionalWork.title" },
+  { link: "#contacts", text: "contacts" },
+];
 
 const keywords =
   "portfolio, jogarcia, web, web development, developer, development, backend, frontend, database";
@@ -52,6 +70,18 @@ const lang = getLangFromUrl(Astro.url);
   </head>
 
   <body>
+    <header>
+      <div class="base-gradient">
+        <BaseGradient degrees="180deg" height="6" />
+      </div>
+      <div class="top-0 left-0 right-0 top-bar">
+        <TopNav client:load links={links} themes={themes} />
+      </div>
+      <div class="fixed bottom-0 left-0 right-0 z-50 bottom-nav">
+        <BottomNav client:load links={links} themes={themes} />
+      </div>
+    </header>
+
     <slot />
     <VueBackToTop />
     <script>

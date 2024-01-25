@@ -1,41 +1,15 @@
 ---
 import Base from "@/layouts/Base.astro";
 
-import BaseGradient from "@/components/BaseGradient.astro";
-import TopNav from "@/components/TopNav.astro";
-import BottomNav from "@/components/BottomNav.vue";
 import SectionHero from "@/components/SectionHero.astro";
 import SectionAbout from "@/components/SectionAbout.astro";
 import SectionSkills from "@/components/SectionSkills.astro";
 import SectionProjects from "@/components/SectionProjects.astro";
 import SectionAdditionalWork from "@/components/SectionAdditionalWork.astro";
 import SectionContacts from "@/components/SectionContacts.astro";
-
-const themes = [
-  { value: "default", text: "Default", iconColor: "#33bebc" },
-  { value: "crazy", text: "Crazy", iconColor: "#33bebc" },
-  { value: "dark", text: "Dark", iconColor: "#cc925c" },
-];
-
-const links = [
-  { link: "#home", text: "home" },
-  { link: "#about", text: "about" },
-  { link: "#skills", text: "skills" },
-  { link: "#projects", text: "projects.title" },
-  { link: "#additional-work", text: "additionalWork.title" },
-  { link: "#contacts", text: "contacts" },
-];
 ---
 
 <Base>
-  <header>
-    <div class="base-gradient">
-      <BaseGradient degrees="180deg" height="6" />
-    </div>
-    <div class="top-0 left-0 right-0 top-bar">
-      <TopNav client:load links={links} themes={themes} />
-    </div>
-  </header>
   <main class="container mx-auto">
     <SectionHero id="home" />
     <SectionAbout id="about" />
@@ -44,9 +18,6 @@ const links = [
     <SectionAdditionalWork id="additional-work" />
     <SectionContacts id="contacts" />
 
-    <div class="fixed bottom-0 left-0 right-0 z-50 bottom-nav">
-      <BottomNav client:load links={links} themes={themes} />
-    </div>
     <div class="mt-20 pt-10 sm:mt-0 content"></div>
   </main>
 </Base>
