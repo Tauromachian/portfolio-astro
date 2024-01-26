@@ -1,5 +1,5 @@
 ---
-import BaseButton from "./BaseButton.vue";
+import BaseButton from "./BaseButton.astro";
 
 const {
   downloadLink,
@@ -12,13 +12,12 @@ const {
 ---
 
 <BaseButton
-  client:load
-  download-link={downloadLink}
-  prepend-icon={prependIcon}
+  downloadLink={downloadLink}
+  prependIcon={prependIcon}
   size={size}
   outline={outline}
   class={className}
-  id={id}
+  buttonId={id}
 >
   <span class="text-2xl font-bold">
     <slot />
