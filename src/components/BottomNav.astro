@@ -1,0 +1,103 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+import BaseButton from "./BaseButton.vue";
+import BaseMenu from "./BaseMenu.astro";
+import ThemeSelector from "./ThemeSelector.astro";
+import SocialIconsBase from "./SocialIconsBase.vue";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { links, themes } = Astro.props;
+---
+
+<nav class="flex flex-col">
+  <div class="relative flex flex-col items-center">
+    <div
+      id="links-container"
+      class="flex flex-col items-center justify-center text-center bg-primary px-10 pt-2 rounded-t-md links links--hidden"
+    >
+      <ul>
+        {
+          links.map((link) => (
+            <li class="navbar__link py-3">
+              <a href={link.link} class="text-xl">
+                {t(link.text)}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+  <div class="buttons flex justify-center bg-primary px-3 text-2xl">
+    <div id="bottom-nav-change-language-button">
+      <BaseButton title="Translate" class="navbar__link" icon>
+        <SocialIconsBase icon="mdiTranslate" />
+      </BaseButton>
+    </div>
+    <BaseMenu bottom="3rem" id="bottom-nav-menu">
+      <div slot="activator">
+        <BaseButton title="Theme change" class="navbar__link" icon v-on="on">
+          <SocialIconsBase icon="mdiInvertColors" />
+        </BaseButton>
+      </div>
+      <ThemeSelector themes={themes} />
+    </BaseMenu>
+    <div id="links-button">
+      <BaseButton
+        title="Menu"
+        class="navbar__link"
+        icon
+        @click="isHidden = !isHidden"
+      >
+        <SocialIconsBase icon="mdiMenu" />
+      </BaseButton>
+    </div>
+  </div>
+</nav>
+
+<script>
+  import { changeLanguage } from "@/i18n/utils";
+
+  let isLinksContainerHidden = true;
+
+  const linksContainer = document.getElementById("links-container");
+  linksContainer.classList.add("links--hidden");
+
+  const linksButton = document.getElementById("links-button");
+  linksButton.addEventListener("click", () => {
+    isLinksContainerHidden = !isLinksContainerHidden;
+    isLinksContainerHidden
+      ? linksContainer.classList.add("links--hidden")
+      : linksContainer.classList.remove("links--hidden");
+  });
+
+  const changeLanguageButton = document.getElementById(
+    "bottom-nav-change-language-button",
+  );
+
+  changeLanguageButton.addEventListener("click", changeLanguage);
+</script>
+
+<style lang="scss">
+  app-links li {
+    display: inline;
+  }
+
+  .buttons {
+    z-index: 20;
+  }
+
+  .links {
+    position: absolute;
+    transition: all 0.3s linear;
+    z-index: 10;
+    bottom: 0;
+  }
+
+  .links--hidden {
+    bottom: -300px;
+  }
+</style>
