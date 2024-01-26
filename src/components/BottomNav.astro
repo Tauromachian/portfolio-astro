@@ -14,22 +14,20 @@ const { links, themes } = Astro.props;
 
 <nav class="flex flex-col">
   <div class="relative flex flex-col items-center">
-    <div
-      id="links-container"
+    <ul
+      id="bottom-nav-links-container"
       class="flex flex-col items-center justify-center text-center bg-primary px-10 pt-2 rounded-t-md links links--hidden"
     >
-      <ul>
-        {
-          links.map((link) => (
-            <li class="navbar__link py-3">
-              <a href={link.link} class="text-xl">
-                {t(link.text)}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
+      {
+        links.map((link) => (
+          <li class="bottom-nav-link navbar__link py-3">
+            <a href={link.link} class="text-xl">
+              {t(link.text)}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </div>
   <div class="buttons flex justify-center bg-primary px-3 text-2xl">
     <div id="bottom-nav-change-language-button">
@@ -60,10 +58,21 @@ const { links, themes } = Astro.props;
 
 <script>
   import { changeLanguage } from "@/i18n/utils";
+  import { scrollToPosition } from "@/utils/scrollToPosition";
 
   let isLinksContainerHidden = true;
 
-  const linksContainer = document.getElementById("links-container");
+  const linksContainer = document.getElementById("bottom-nav-links-container");
+  const links = linksContainer.children;
+
+  for (let i = 0; i < links.length; i++) {
+    links[i].addEventListener("click", (event) => {
+      event.preventDefault();
+      const linkHref = links[i].children[0].getAttribute("href");
+      scrollToPosition(linkHref);
+    });
+  }
+
   linksContainer.classList.add("links--hidden");
 
   const linksButton = document.getElementById("links-button");

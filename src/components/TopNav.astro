@@ -23,7 +23,7 @@ const { links, themes } = Astro.props;
       <h4 class="text-3xl ml-5">José García</h4>
     </div>
 
-    <ul class="flex items-center text-xl mx-auto">
+    <ul id="top-nav-links-container" class="flex items-center text-xl mx-auto">
       {
         links.map((link) => (
           <li class="px-3 relative mx-0 transition-colors transition-200 navbar__link">
@@ -64,12 +64,23 @@ const { links, themes } = Astro.props;
 
 <script>
   import { changeLanguage } from "@/i18n/utils";
+  import { scrollToPosition } from "@/utils/scrollToPosition";
 
   const changeLanguageButton = document.getElementById(
     "change-language-button",
   );
 
   changeLanguageButton.addEventListener("click", changeLanguage);
+
+  const linksContainer = document.getElementById("top-nav-links-container");
+  const links = linksContainer.children;
+  for (let i = 0; i < links.length; i++) {
+    links[i].addEventListener("click", (event) => {
+      event.preventDefault();
+      const linkHref = links[i].children[0].getAttribute("href");
+      scrollToPosition(linkHref);
+    });
+  }
 </script>
 
 <style>
