@@ -6,13 +6,15 @@ const { themes } = Astro.props;
 ---
 
 <ListWrapper>
-  {
-    themes.map((theme) => (
-      <ul class="list-none">
-        <ListItem class="text-xl list-item">{theme.text}</ListItem>
-      </ul>
-    ))
-  }
+  <ul class="list-none">
+    {
+      themes.map((theme) => (
+        <li class="list-item">
+          <ListItem class="text-xl ">{theme.text}</ListItem>
+        </li>
+      ))
+    }
+  </ul>
 </ListWrapper>
 
 <script>
