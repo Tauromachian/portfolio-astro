@@ -1,11 +1,11 @@
 ---
-const { top, bottom, left, right } = Astro.props;
+const { top, bottom, left, right, id } = Astro.props;
 
 const position = `top: ${top}; bottom: ${bottom}; left: ${left}; right: ${right}`;
 ---
 
-<div class="relative inline-block text-left bg--primary">
-  <div id="activator">
+<base-menu class="relative inline-block text-left bg--primary">
+  <div class="activator">
     <slot name="activator" />
   </div>
 
@@ -17,40 +17,52 @@ const position = `top: ${top}; bottom: ${bottom}; left: ${left}; right: ${right}
   >
     <slot />
   </div>
-</div>
+</base-menu>
 
 <script>
-  let isDropdownActive = false;
-
-  const activator = document.getElementById("activator");
-  const menuContent = document.getElementById("menu-content");
-
-  document.addEventListener("click", function (event) {
-    if (
-      !activator.contains(event.target) &&
-      !menuContent.contains(event.target)
-    ) {
-      hideDropdown(event);
-    }
-  });
-
-  activator.addEventListener("click", toggleDropdown);
-
-  function toggleDropdown(event) {
-    event.stopPropagation();
-    isDropdownActive = !isDropdownActive;
-    isDropdownActive
-      ? menuContent.classList.add("show")
-      : menuContent.classList.remove("show");
-  }
-
-  function hideDropdown(event) {
-    event.stopPropagation();
-
+  class BaseMenu extends HTMLElement {
     isDropdownActive = false;
+    activator = null;
+    menuContent = null;
 
-    menuContent.classList.remove("show");
+    constructor() {
+      super();
+      this.isDropdownActive = false;
+
+      this.activator = this.querySelector("div.activator");
+      this.menuContent = this.querySelector("div.menu");
+
+      this.activator.addEventListener("click", (event) => {
+        event.stopPropagation();
+        this.toggleDropdown();
+      });
+
+      document.addEventListener("click", (event) => {
+        if (
+          this.activator.contains(event.target) ||
+          this.menuContent.contains(event.target)
+        ) {
+          return;
+        }
+        this.hideDropdown();
+      });
+    }
+
+    toggleDropdown() {
+      this.isDropdownActive = !this.isDropdownActive;
+      this.isDropdownActive
+        ? this.menuContent.classList.add("show")
+        : this.menuContent.classList.remove("show");
+    }
+
+    hideDropdown() {
+      this.isDropdownActive = false;
+
+      this.menuContent.classList.remove("show");
+    }
   }
+
+  customElements.define("base-menu", BaseMenu);
 </script>
 
 <style lang="scss" scoped>
