@@ -1,6 +1,6 @@
 ---
 import AppAlert from "./AppAlert.astro";
-import BaseButton from "./BaseButton.vue";
+import BaseButton from "./BaseButton.astro";
 import BaseAreaText from "./BaseAreaText.astro";
 import BaseInputText from "./BaseInputText.astro";
 import BaseCard from "./BaseCard.astro";
@@ -96,11 +96,10 @@ const errorMessage = {
 
       <span class="flex w-full">
         <BaseButton
-          client:visible
-          button-id={BUTTON_ID}
+          buttonId={BUTTON_ID}
           class="mt-5 ml-auto"
           id="form-button"
-          prepend-icon="mdiEmailArrowRight"
+          prependIcon="mdiEmailArrowRight"
           type="submit"
         >
           {t("button.send")}
