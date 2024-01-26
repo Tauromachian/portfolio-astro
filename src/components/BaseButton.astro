@@ -1,0 +1,153 @@
+---
+import AppLoader from "./AppLoader.vue";
+import SocialIconsBase from "./SocialIconsBase.astro";
+
+const {
+  icon,
+  loadingText,
+  outline,
+  downloadLink,
+  prependIcon,
+  buttonId,
+  size,
+  class: classes,
+  type,
+} = Astro.props;
+
+console.log(Astro.props);
+
+const ParentElement = downloadLink ? "a" : "button";
+
+const buttonClasses = (() => {
+  const classes = {};
+  if (icon) {
+    classes["padding"] = 0;
+    classes["icon-button"] = true;
+  }
+
+  if (outline) {
+    classes["outline"] = true;
+  }
+
+  return classes;
+})();
+
+const sizeClasses = (() => {
+  if (size === "x-large") return { "h-16": true, "px-7": true };
+
+  return { "h-9": true, "px-4": true };
+})();
+
+const outlineClasses = (() => {
+  if (outline) {
+    return {
+      outline: true,
+    };
+  }
+  return {};
+})();
+---
+
+<base-button data-id={buttonId} class:list={classes}>
+  <ParentElement
+    href={downloadLink}
+    type={type ?? "button"}
+    role="button"
+    class="transition rounded-lg bg-primary outline-none hover:bg-green-300 px-5 inline-grid items-center relative button"
+    class:list={[buttonClasses, sizeClasses, outlineClasses]}
+    download={!!downloadLink}
+  >
+    <span
+      id="button-loading-overlay"
+      class="invisible flex justify-center rounded-lg items-center absolute top-0 bottom-0 right-0 left-0 w-full h-full base-button__loading-content"
+    >
+      <AppLoader />
+      {loadingText && <span class="ml-2">{loadingText}</span>}
+      <span v-else class="ml-2">Loading...</span>
+    </span>
+
+    {
+      prependIcon && (
+        <SocialIconsBase
+          class="mr-2 base-button__prepend"
+          height="30px"
+          width="30px"
+          icon={prependIcon}
+        />
+      )
+    }
+
+    <span class="base-button__content">
+      <slot />
+    </span>
+  </ParentElement>
+</base-button>
+
+<script>
+  import { loadingState } from "@/stores/formStore.js";
+
+  class BaseButton extends HTMLElement {
+    buttonLoadingOverlay = null;
+    isVisible = false;
+
+    constructor() {
+      super();
+
+      this.buttonLoadingOverlay = this.querySelector(
+        "span#button-loading-overlay",
+      );
+
+      loadingState.subscribe((state) => {
+        this.isVisible = state.loadingDictionary[this.dataset.id];
+        this.toggleVisibility();
+      });
+    }
+
+    toggleVisibility() {
+      this.isVisible
+        ? (this.buttonLoadingOverlay.style.visibility = "visible")
+        : (this.buttonLoadingOverlay.style.visibility = "hidden");
+    }
+  }
+
+  customElements.define("base-button", BaseButton);
+</script>
+
+<style scoped>
+  .icon-button {
+    background-color: transparent !important;
+    border-radius: 50%;
+    height: 2.3em;
+    width: 2.3em;
+    padding: 0.5em;
+    margin: 0.2em;
+  }
+
+  .button {
+    grid-template-areas: "prepend content";
+    grid-template-columns: max-content auto;
+  }
+
+  .base-button__prepend {
+    grid-area: prepend;
+  }
+  .base-button__content {
+    grid-area: content;
+  }
+  .button:hover {
+    background-color: var(--color-secondary) !important;
+  }
+
+  .border-top-primary {
+    border-top-color: var(--color-primary) !important;
+  }
+
+  .outline {
+    border: 1px solid;
+    background-color: transparent !important;
+  }
+
+  .base-button__loading-content {
+    background-color: var(--color-primary) !important;
+  }
+</style>
