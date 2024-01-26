@@ -8,9 +8,9 @@ const { themes } = Astro.props;
 <ListWrapper>
   {
     themes.map((theme) => (
-      <div>
+      <ul class="list-none">
         <ListItem class="text-xl list-item">{theme.text}</ListItem>
-      </div>
+      </ul>
     ))
   }
 </ListWrapper>
