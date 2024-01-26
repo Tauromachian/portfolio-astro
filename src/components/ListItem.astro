@@ -1,0 +1,10 @@
+---
+const { class: classes} = Astro.props
+---
+
+<div
+  class="py-2 px-4 cursor-pointer transition-colors duration-200 text-gray-700 hover:bg-gray-100"
+  class:list={classes}
+>
+  <slot class="text-base" />
+</div>
