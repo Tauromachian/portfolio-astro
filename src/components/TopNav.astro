@@ -56,19 +56,13 @@ const { links, themes } = Astro.props;
             <SocialIconsBase icon="mdiInvertColors" />
           </BaseButton>
         </div>
-        <ThemeSelector
-          id="theme-selector"
-          themes={themes}
-          oninput="saveTheme"
-        />
+        <ThemeSelector themes={themes} />
       </BaseMenu>
     </div>
   </div>
 </nav>
 
 <script>
-  import { scrollToPosition } from "../utils/scrollToPosition";
-  import { setTheme } from "../utils/themeHelper";
   import { changeLanguage } from "@/i18n/utils";
 
   const changeLanguageButton = document.getElementById(
@@ -76,14 +70,6 @@ const { links, themes } = Astro.props;
   );
 
   changeLanguageButton.addEventListener("click", changeLanguage);
-
-  window.addEventListener("load", () => {
-    let theme = localStorage.getItem("theme") ?? "default";
-  });
-
-  const saveTheme = (value) => {
-    setTheme(value);
-  };
 </script>
 
 <style>
