@@ -9,6 +9,7 @@ const {
   downloadLink,
   prependIcon,
   buttonId,
+  title,
   size,
   class: classes,
   type,
@@ -51,6 +52,7 @@ const outlineClasses = (() => {
     href={downloadLink}
     id={buttonId}
     type={type ?? "button"}
+    title={title}
     role="button"
     class="transition w-full rounded-lg bg-primary outline-none hover:bg-green-300 px-5 inline-grid items-center relative button"
     class:list={[buttonClasses, sizeClasses, outlineClasses]}
