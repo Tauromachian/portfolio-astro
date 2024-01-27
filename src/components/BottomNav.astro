@@ -2,14 +2,12 @@
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 import BaseButton from "./BaseButton.astro";
-import BaseMenu from "./BaseMenu.astro";
-import ThemeSelector from "./ThemeSelector.astro";
 import SocialIconsBase from "./SocialIconsBase.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const { links, themes } = Astro.props;
+const { links } = Astro.props;
 ---
 
 <nav class="flex flex-col">
@@ -35,14 +33,11 @@ const { links, themes } = Astro.props;
         <SocialIconsBase icon="mdiTranslate" />
       </BaseButton>
     </div>
-    <BaseMenu bottom="3rem" id="bottom-nav-menu">
-      <div slot="activator">
-        <BaseButton title="Theme change" class="navbar__link" icon v-on="on">
-          <SocialIconsBase icon="mdiInvertColors" />
-        </BaseButton>
-      </div>
-      <ThemeSelector themes={themes} />
-    </BaseMenu>
+    <div id="bottom-nav-change-theme-button">
+      <BaseButton title="Theme change" class="navbar__link" icon v-on="on">
+        <SocialIconsBase icon="mdiInvertColors" />
+      </BaseButton>
+    </div>
     <div id="links-button">
       <BaseButton
         title="Menu"
@@ -59,11 +54,17 @@ const { links, themes } = Astro.props;
 <script>
   import { changeLanguage } from "@/i18n/utils";
   import { scrollToPosition } from "@/utils/scrollToPosition";
+  import { toggleTheme } from "@/stores/themeStore";
 
   let isLinksContainerHidden = true;
 
   const linksContainer = document.getElementById("bottom-nav-links-container");
   const links = linksContainer.children;
+  const themeButton = document.getElementById("bottom-nav-change-theme-button");
+
+  themeButton.addEventListener("click", () => {
+    toggleTheme();
+  });
 
   for (let i = 0; i < links.length; i++) {
     links[i].addEventListener("click", (event) => {

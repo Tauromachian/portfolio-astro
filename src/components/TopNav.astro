@@ -2,14 +2,12 @@
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 import BaseButton from "./BaseButton.astro";
-import BaseMenu from "./BaseMenu.astro";
-import ThemeSelector from "./ThemeSelector.astro";
 import SocialIconsBase from "./SocialIconsBase.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const { links, themes } = Astro.props;
+const { links } = Astro.props;
 ---
 
 <nav class="bg-primary">
@@ -44,19 +42,15 @@ const { links, themes } = Astro.props;
           <SocialIconsBase icon="mdiTranslate" />
         </BaseButton>
       </div>
-      <BaseMenu bottom="initial" top="3rem">
-        <div slot="activator">
-          <BaseButton
-            title="Theme changer"
-            class="relative mx-0 transition-colors transition-200 navbar__link"
-            icon
-            v-bind="on"
-          >
-            <SocialIconsBase icon="mdiInvertColors" />
-          </BaseButton>
-        </div>
-        <ThemeSelector themes={themes} />
-      </BaseMenu>
+      <div id="top-nav-change-theme-button">
+        <BaseButton
+          title="Theme changer"
+          class="relative mx-0 transition-colors transition-200 navbar__link"
+          icon
+        >
+          <SocialIconsBase icon="mdiInvertColors" />
+        </BaseButton>
+      </div>
     </div>
   </div>
 </nav>
@@ -64,12 +58,17 @@ const { links, themes } = Astro.props;
 <script>
   import { changeLanguage } from "@/i18n/utils";
   import { scrollToPosition } from "@/utils/scrollToPosition";
+  import { toggleTheme } from "@/stores/themeStore";
 
   const changeLanguageButton = document.getElementById(
     "change-language-button",
   );
+  const themeButton = document.getElementById("top-nav-change-theme-button");
 
   changeLanguageButton.addEventListener("click", changeLanguage);
+  themeButton.addEventListener("click", () => {
+    toggleTheme();
+  });
 
   const linksContainer = document.getElementById("top-nav-links-container");
   const links = linksContainer.children;
