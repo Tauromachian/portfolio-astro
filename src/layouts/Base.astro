@@ -95,7 +95,7 @@ const lang = getLangFromUrl(Astro.url);
         selectedTheme.set(theme);
       });
 
-      selectedTheme.listen((theme) => {
+      selectedTheme.listen(() => {
         toggleTheme();
       });
     </script>
