@@ -8,7 +8,6 @@ import { getLangFromUrl } from "../i18n/utils";
 
 const themes = [
   { value: "default", text: "Default", iconColor: "#33bebc" },
-  { value: "crazy", text: "Crazy", iconColor: "#33bebc" },
   { value: "dark", text: "Dark", iconColor: "#cc925c" },
 ];
 
@@ -86,7 +85,7 @@ const lang = getLangFromUrl(Astro.url);
     <VueBackToTop />
     <script>
       import { selectedTheme } from "@/stores/themeStore";
-      import { setTheme } from "@/utils/themeHelper";
+      import { toggleTheme } from "@/utils/themeHelper";
 
       window.addEventListener("load", () => {
         const theme = localStorage.getItem("theme") ?? "default";
@@ -96,8 +95,8 @@ const lang = getLangFromUrl(Astro.url);
         selectedTheme.set(theme);
       });
 
-      selectedTheme.listen((themeValue) => {
-        setTheme(themeValue);
+      selectedTheme.listen((theme) => {
+        toggleTheme();
       });
     </script>
   </body>
