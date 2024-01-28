@@ -1,0 +1,19 @@
+.shadow {
+  color: var(--text-color-gray-900);
+  transition: all 0.1s;
+  box-shadow: 6px 6px 0px 1px #9ca3af;
+}
+
+.shadow--press:focus {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0px 1px var(--shadow-color);
+}
+
+.shadow--zoom {
+  box-shadow: 2px 2px 0px 1px #9ca3af;
+}
+
+.shadow--zoom:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px 1px #9ca3af;
+}
