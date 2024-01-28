@@ -35,19 +35,3 @@
 #menu-content {
   z-index: 190;
 }
-
-.scroll-icon {
-  animation: up-and-down 1s infinite ease-out;
-}
-
-@keyframes up-and-down {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
