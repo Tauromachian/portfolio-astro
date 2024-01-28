@@ -13,6 +13,7 @@ const {
   size,
   class: classes,
   type,
+  fileName = "cv",
 } = Astro.props;
 
 const ParentElement = downloadLink ? "a" : "button";
@@ -56,7 +57,7 @@ const outlineClasses = (() => {
     role="button"
     class="transition w-full rounded-lg bg-primary outline-none hover:bg-green-300 px-5 inline-grid items-center relative button"
     class:list={[buttonClasses, sizeClasses, outlineClasses]}
-    download={!!downloadLink}
+    download={fileName}
   >
     <span
       id="button-loading-overlay"

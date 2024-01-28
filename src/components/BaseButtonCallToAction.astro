@@ -8,6 +8,7 @@ const {
   outline,
   id,
   class: className,
+  fileName = "cv",
 } = Astro.props;
 ---
 
@@ -17,6 +18,7 @@ const {
   size={size}
   outline={outline}
   class={className}
+  fileName={fileName}
   buttonId={id}
 >
   <span class="text-2xl font-bold">
