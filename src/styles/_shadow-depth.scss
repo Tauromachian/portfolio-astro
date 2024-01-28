@@ -17,3 +17,8 @@
   transform: translate(-2px, -2px);
   box-shadow: 7px 7px 0px 1px #9ca3af;
 }
+
+.shadow--zoom:active {
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 0px 1px #9ca3af;
+}
