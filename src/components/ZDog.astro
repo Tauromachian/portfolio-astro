@@ -28,7 +28,7 @@
     illo = new Zdog.Illustration({
       element: illoElem,
       zoom: zoom,
-      dragRotate: true,
+      dragRotate: zdogContainer.offsetWidth > 800,
       onDragStart: function () {
         isSpinning = false;
       },
