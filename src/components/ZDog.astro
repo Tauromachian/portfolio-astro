@@ -19,8 +19,8 @@
     let illoSize = 64;
     let minWindowSize = Math.min(zdogContainer.offsetWidth, window.innerHeight);
     let zoom = Math.floor(minWindowSize / illoSize);
-    illoElem.setAttribute("width", illoSize * zoom);
-    illoElem.setAttribute("height", illoSize * zoom);
+    illoElem.setAttribute("width", `${illoSize * zoom}`);
+    illoElem.setAttribute("height", `${illoSize * zoom}`);
 
     let isSpinning = true;
     let TAU = Zdog.TAU;
@@ -167,9 +167,12 @@
   function replaceWithClone() {
     const original = document.querySelector("#zdog");
 
-    const clone = original.cloneNode(true);
+    const newCanvas = document.createElement("canvas");
 
-    original.parentNode.replaceChild(clone, original);
+    newCanvas.id = "zdog ";
+    newCanvas.classList.add("my-auto cursor-pointer");
+
+    original.parentNode.replaceChild(newCanvas, original);
   }
 
   window.addEventListener("resize", () => {
