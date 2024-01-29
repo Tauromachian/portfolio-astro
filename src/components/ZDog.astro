@@ -76,13 +76,15 @@
     let blue = "#19297C";
     let blue2 = "#19291C";
 
-    let colorWheel = [beige, magenta, orange, blue, green];
-
+    let anchor = new Zdog.Anchor({
+      addTo: illo,
+      rotate: { x: -4, y: 10 },
+    });
     // ----- model ----- //
 
     // top & bottom
     var cube = new Zdog.Box({
-      addTo: illo,
+      addTo: anchor,
       width: 8,
       height: 8,
       depth: 8,
