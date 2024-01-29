@@ -18,6 +18,17 @@ const {
 
 const ParentElement = downloadLink ? "a" : "button";
 
+const buttonWrapperClasses = (() => {
+  const classes = {};
+
+  if (!icon) {
+    classes["shadow"] = true;
+    classes["shadow--zoom"] = true;
+  }
+
+  return classes;
+})();
+
 const buttonClasses = (() => {
   const classes = {};
   if (icon) {
@@ -51,8 +62,13 @@ const outlineClasses = (() => {
     type={type ?? "button"}
     title={title}
     role="button"
-    class="transition w-full rounded bg-primary outline-none hover:bg-green-300 px-5 inline-grid items-center relative button shadow shadow--zoom"
-    class:list={[buttonClasses, sizeClasses, outlineClasses]}
+    class="transition w-full rounded bg-primary outline-none hover:bg-green-300 px-5 inline-grid items-center relative button"
+    class:list={[
+      buttonClasses,
+      sizeClasses,
+      outlineClasses,
+      buttonWrapperClasses,
+    ]}
     download={fileName}
   >
     <span
