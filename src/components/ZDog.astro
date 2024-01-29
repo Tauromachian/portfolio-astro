@@ -3,7 +3,7 @@
 ---
 
 <div class="flex w-full" id="zdog-container">
-  <canvas id="zdog" class="my-auto cursor-pointer"></canvas>
+  <canvas id="zdog" class="my-auto md:cursor-pointer"></canvas>
 </div>
 
 <script>
@@ -170,7 +170,7 @@
     const newCanvas = document.createElement("canvas");
 
     newCanvas.id = "zdog ";
-    newCanvas.classList.add("my-auto cursor-pointer");
+    newCanvas.classList.add("my-auto md:cursor-pointer");
 
     original.parentNode.replaceChild(newCanvas, original);
   }
