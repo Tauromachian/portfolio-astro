@@ -82,7 +82,9 @@ const lang = getLangFromUrl(Astro.url);
     </header>
 
     <slot />
-    <VueBackToTop />
+    <div class="invisible md:visible">
+      <VueBackToTop />
+    </div>
     <script>
       import { selectedTheme } from "@/stores/themeStore";
       import { toggleTheme } from "@/utils/themeHelper";
