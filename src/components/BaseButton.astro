@@ -48,14 +48,14 @@ const outlineClasses = (() => {
 })();
 ---
 
-<base-button data-id={buttonId} class="rounded-lg" class:list={classes}>
+<base-button data-id={buttonId} class="rounded" class:list={classes}>
   <ParentElement
     href={downloadLink}
     id={buttonId}
     type={type ?? "button"}
     title={title}
     role="button"
-    class="transition w-full rounded-lg bg-primary outline-none hover:bg-green-300 px-5 inline-grid items-center relative button shadow shadow--zoom"
+    class="transition w-full rounded bg-primary outline-none hover:bg-green-300 px-5 inline-grid items-center relative button shadow shadow--zoom"
     class:list={[buttonClasses, sizeClasses, outlineClasses]}
     download={fileName}
   >
