@@ -1,7 +1,12 @@
 export function toggleTheme() {
   if (document.documentElement.getAttribute("theme") === "default") {
-    document.documentElement.setAttribute("theme", "dark");
+    setTheme("dark");
   } else {
-    document.documentElement.setAttribute("theme", "default");
+    setTheme("default");
   }
+}
+
+export function setTheme(theme) {
+  document.documentElement.setAttribute("theme", theme.trim());
+  localStorage.setItem("theme", theme.trim());
 }

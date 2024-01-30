@@ -87,7 +87,7 @@ const lang = getLangFromUrl(Astro.url);
     </div>
     <script>
       import { selectedTheme } from "@/stores/themeStore";
-      import { toggleTheme } from "@/utils/themeHelper";
+      import { toggleTheme, setTheme } from "@/utils/themeHelper";
 
       window.addEventListener("load", () => {
         const theme = localStorage.getItem("theme") ?? "default";
@@ -97,8 +97,8 @@ const lang = getLangFromUrl(Astro.url);
         selectedTheme.set(theme);
       });
 
-      selectedTheme.listen(() => {
-        toggleTheme();
+      selectedTheme.listen((theme) => {
+        theme ? setTheme(theme) : toggleTheme();
       });
     </script>
   </body>
