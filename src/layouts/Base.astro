@@ -70,13 +70,13 @@ const lang = getLangFromUrl(Astro.url);
 
   <body>
     <header>
-      <div class="base-gradient">
+      <div class="md:hidden">
         <BaseGradient degrees="180deg" height="6" />
       </div>
-      <div class="top-0 left-0 right-0 top-bar">
+      <div class="top-0 left-0 right-0 hidden md:block">
         <TopNav links={links} themes={themes} />
       </div>
-      <div class="fixed bottom-0 left-0 right-0 z-50 bottom-nav">
+      <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden">
         <BottomNav links={links} themes={themes} />
       </div>
     </header>
