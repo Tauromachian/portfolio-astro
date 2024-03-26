@@ -110,7 +110,7 @@ const errorMessage = {
 </BaseSection>
 
 <script>
-  import { message, loadingState } from "@/stores/formStore";
+  import { loadingState } from "@/stores/formStore";
 
   class SectionContacts extends HTMLElement {
     constructor() {
@@ -121,7 +121,6 @@ const errorMessage = {
 
   const form = document.getElementById("contact-form");
   const sectionContacts = document.querySelector("section-contacts");
-  const messageWrapper = document.getElementById("message-wrapper");
 
   form.addEventListener("submit", (event) => {
     submitForm();
