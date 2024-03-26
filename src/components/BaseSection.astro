@@ -2,7 +2,7 @@
 const { title, titleAlignment, id, class: classes } = Astro.props;
 ---
 
-<section class="my-32 p-3" class={classes} id={id}>
+<section class="my-32 p-3" class:list={classes} id={id}>
   {
     title && (
       <h2
