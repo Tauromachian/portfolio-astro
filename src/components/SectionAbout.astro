@@ -9,9 +9,9 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<BaseSection title="" titleAlignment="" class:list="container" id="about">
-  <div class="flex flex-col md:flex-row justify-center">
-    <div class="flex flex-col basis-2/3 justify-center max-w-xl">
+<BaseSection title="" titleAlignment="" id="about">
+  <div class="md:flex md:flex-row justify-center">
+    <div class="my-auto basis-2/3 max-w-xl">
       <h2 class="mb-5 text-3xl text-5xl self-start text-left">
         {t("about")}
       </h2>
@@ -62,51 +62,47 @@ const t = useTranslations(lang);
       </span>
     </div>
   </div>
-  <div class="flex flex-col justify-center sm:flex-row mt-16">
-    <div class="flex flex-col md:flex-row">
-      <BaseCard transparent class="w-full md:mr-1 py-4">
-        <CardFeature
-          title={t("intuitive")}
-          icon="mdiLightbulb"
-          alt="Intuitive icon"
-        >
-          <p class="md:text-center md:mx-3">
-            {t("intuitiveText")}
-          </p>
-        </CardFeature>
-      </BaseCard>
-      <BaseCard transparent class="w-full md:mx-1 py-4">
-        <CardFeature title={t("fast")} icon="mdiRocketLaunch" alt="Fast icon">
-          <p class="md:text-center md:mx-3">
-            {t("fastText")}
-          </p>
-        </CardFeature>
-      </BaseCard>
-    </div>
-    <div class="flex flex-col md:flex-row">
-      <BaseCard transparent class="w-full md:mr-1 py-4">
-        <CardFeature
-          title={t("responsive")}
-          icon="mdiResponsive"
-          alt="Responsive icon"
-        >
-          <p class="md:text-center md:mx-3">
-            {t("responsiveText")}
-          </p>
-        </CardFeature>
-      </BaseCard>
-      <BaseCard transparent class="w-full md:mx-1 py-4">
-        <CardFeature
-          title={t("reactive")}
-          icon="mdiAlphaRCircle"
-          alt="Reactive icon"
-        >
-          <p class="md:text-center md:mx-3">
-            {t("reactiveText")}
-          </p>
-        </CardFeature>
-      </BaseCard>
-    </div>
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 mt-16">
+    <BaseCard transparent class="w-full md:mr-1 py-4">
+      <CardFeature
+        title={t("intuitive")}
+        icon="mdiLightbulb"
+        alt="Intuitive icon"
+      >
+        <p class="md:text-center md:mx-3">
+          {t("intuitiveText")}
+        </p>
+      </CardFeature>
+    </BaseCard>
+    <BaseCard transparent class="w-full md:mx-1 py-4">
+      <CardFeature title={t("fast")} icon="mdiRocketLaunch" alt="Fast icon">
+        <p class="md:text-center md:mx-3">
+          {t("fastText")}
+        </p>
+      </CardFeature>
+    </BaseCard>
+    <BaseCard transparent class="w-full md:mr-1 py-4">
+      <CardFeature
+        title={t("responsive")}
+        icon="mdiResponsive"
+        alt="Responsive icon"
+      >
+        <p class="md:text-center md:mx-3">
+          {t("responsiveText")}
+        </p>
+      </CardFeature>
+    </BaseCard>
+    <BaseCard transparent class="w-full md:mx-1 py-4">
+      <CardFeature
+        title={t("reactive")}
+        icon="mdiAlphaRCircle"
+        alt="Reactive icon"
+      >
+        <p class="md:text-center md:mx-3">
+          {t("reactiveText")}
+        </p>
+      </CardFeature>
+    </BaseCard>
   </div>
 </BaseSection>
 
