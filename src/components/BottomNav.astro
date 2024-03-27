@@ -14,7 +14,7 @@ const { links } = Astro.props;
   <div class="relative flex flex-col items-center">
     <ul
       id="bottom-nav-links-container"
-      class="text-center bg-primary pt-2 rounded-t-md links links--hidden"
+      class="text-center bg-primary pt-2 rounded-t-md absolute z-10 bottom-0 transition links--hidden"
     >
       {
         links.map((link) => (
