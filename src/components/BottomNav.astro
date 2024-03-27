@@ -13,7 +13,7 @@ const { links } = Astro.props;
 <nav class="relative grid">
   <ul
     id="bottom-nav-links-container"
-    class="text-center bg-primary pt-2 rounded-t-md absolute z-10 bottom-0 transition justify-self-center links--hidden"
+    class="text-center bg-primary pt-2 rounded-t-md absolute z-10 bottom-0 transition justify-self-center -translate-y-14 translate-y-60"
   >
     {
       links.map((link) => (
@@ -72,14 +72,12 @@ const { links } = Astro.props;
     });
   }
 
-  linksContainer.classList.add("links--hidden");
-
   const linksButton = document.getElementById("links-button");
   linksButton.addEventListener("click", () => {
     isLinksContainerHidden = !isLinksContainerHidden;
     isLinksContainerHidden
-      ? linksContainer.classList.add("links--hidden")
-      : linksContainer.classList.remove("links--hidden");
+      ? linksContainer.classList.add("translate-y-60")
+      : linksContainer.classList.remove("translate-y-60");
   });
 
   const changeLanguageButton = document.getElementById(
@@ -88,9 +86,3 @@ const { links } = Astro.props;
 
   changeLanguageButton.addEventListener("click", changeLanguage);
 </script>
-
-<style lang="scss">
-  .links--hidden {
-    transform: translateY(235px);
-  }
-</style>
