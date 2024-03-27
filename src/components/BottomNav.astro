@@ -92,22 +92,7 @@ const { links } = Astro.props;
 </script>
 
 <style lang="scss">
-  app-links li {
-    display: inline;
-  }
-
-  .buttons {
-    z-index: 20;
-  }
-
-  .links {
-    position: absolute;
-    transition: all 0.3s linear;
-    z-index: 10;
-    bottom: 0;
-  }
-
   .links--hidden {
-    bottom: -300px;
+    transform: translateY(300px);
   }
 </style>
