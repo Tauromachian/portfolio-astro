@@ -10,23 +10,21 @@ const t = useTranslations(lang);
 const { links } = Astro.props;
 ---
 
-<nav class="flex flex-col">
-  <div class="relative flex flex-col items-center">
-    <ul
-      id="bottom-nav-links-container"
-      class="text-center bg-primary pt-2 rounded-t-md absolute z-10 bottom-0 transition links--hidden"
-    >
-      {
-        links.map((link) => (
-          <li class="bottom-nav-link navbar__link">
-            <a href={link.link} class="block text-xl w-full px-10 py-3">
-              {t(link.text)}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+<nav class="relative grid">
+  <ul
+    id="bottom-nav-links-container"
+    class="text-center bg-primary pt-2 rounded-t-md absolute z-10 bottom-0 transition justify-self-center links--hidden"
+  >
+    {
+      links.map((link) => (
+        <li class="bottom-nav-link navbar__link">
+          <a href={link.link} class="block text-xl w-full px-10 py-3">
+            {t(link.text)}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
   <div class="z-20 flex justify-center bg-primary px-3 text-2xl">
     <div id="bottom-nav-change-language-button">
       <BaseButton title="Translate" class="navbar__link" icon>
