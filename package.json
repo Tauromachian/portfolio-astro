@@ -4,6 +4,9 @@
   "license": "MIT",
   "version": "1.0.0",
   "packageManager": "yarn@1.22.21",
+  "engines": {
+    "node": "v20.11.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
