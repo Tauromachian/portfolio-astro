@@ -4,61 +4,71 @@ import CardProject from "./CardProject.astro";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
+import monarchStarterSite from "../assets/monarch-starter-site.jpg";
+import johnsonTurbineSupport from "../assets/johnson-turbine-support-website.jpg";
+import succubus from "../assets/succubus.jpg";
+import zaru from "../assets/zaru.jpg";
+import monarchStarterAdminDashboard from "../assets/monarch-starter-admin-dashboard.jpg";
+import stepper from "../assets/vue-simple-stepper.jpg";
+import ghost from "../assets/ghost-cms.jpg";
+import succubusTest from "../assets/succubus-test.jpg";
+import compoundCalculator from "../assets/compound-calculator.jpg";
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const projects = [
   {
-    src: "monarch-starter-site",
+    src: monarchStarterSite,
     title: "MonarchStarter",
     link: "https://monarchstarter.jose-garcia.net/",
     alt: "Queues app picture",
   },
   {
-    src: "johnson-turbine-support-website",
+    src: johnsonTurbineSupport,
     title: "Johnson Turbine Support",
     link: "https://www.johnsonturbine.com/",
     alt: "Jhonson Turbine company's portfolio site.",
   },
   {
-    src: "succubus",
+    src: succubus,
     title: "Succubus",
     link: "https://www.succubus-bdsm.com/",
     alt: "Succubus site",
   },
 
   {
-    src: "zaru",
+    src: zaru,
     title: "Zaru Arquitectura",
     link: "https://zaruarquitectura.onrender.com/",
     alt: "Site of architectural displays.",
   },
   {
-    src: "monarch-starter-admin-dashboard",
+    src: monarchStarterAdminDashboard,
     title: "Admin dashboard",
     link: "https://monarchstarter.jose-garcia.net/dashboard",
     alt: "Site of all asian culture fanatics",
   },
   {
-    src: "vue-simple-stepper",
+    src: stepper,
     title: "Vue Simple Stepper",
     link: "https://stepper.jose-garcia.net/",
     alt: "Documentation site of stepper component",
   },
   {
-    src: "ghost-cms",
+    src: ghost,
     title: "Casper Theme",
     link: "https://demo.ghost.io/",
     alt: "Ghost CMS's theme called Casper",
   },
   {
-    src: "succubus-test",
+    src: succubusTest,
     title: "Succubus Poll",
     link: "https://test.succubus-bdsm.com",
     alt: "Succubus BDSM poll",
   },
   {
-    src: "compound-calculator",
+    src: compoundCalculator,
     title: "Compound Calculator",
     link: "https://compounder.pro-link.xyz/",
     alt: "Compound Interest Calculator",

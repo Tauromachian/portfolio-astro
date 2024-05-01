@@ -1,6 +1,14 @@
 ---
 const { src, title, siteUrl, alt } = Astro.props;
 
+// console.log(src);
+
+import { Picture } from "astro:assets";
+
+import expensesTrackerImage from "../assets/expenses-tracker.jpg";
+
+console.log(expensesTrackerImage);
+
 import BaseCard from "./BaseCard.astro";
 import CardText from "./CardText.astro";
 ---
@@ -12,27 +20,13 @@ import CardText from "./CardText.astro";
   target="_blank"
 >
   <BaseCard class="rounded-lg card">
-    <picture>
-      <source
-        sizes="(min-width: 347px)"
-        type="image/avif"
-        srcset={`projects/${src}.full.avif 1900w, projects/${src}.1280.avif 1280w, projects/${src}.640.avif 640w`}
-      />
-      <source
-        sizes="(min-width: 347px)"
-        type="image/webp"
-        srcset={`projects/${src}.full.webp 1900w, projects/${src}.1280.webp 1280w, projects/${src}.640.webp 640w`}
-      />
-      <img
-        class="w-full h-auto rounded-t-lg"
-        decoding="async"
-        loading="lazy"
-        width="1256"
-        height="1004"
-        alt={alt}
-        srcset={`projects/${src}.full.jpg 1900w, projects/${src}.1280.jpg 1280w, projects/${src}.640.jpg 640w`}
-      />
-    </picture>
+    <Picture
+      class="w-full h-auto rounded-t-lg"
+      src={src}
+      widths={[1280, expensesTrackerImage.width]}
+      formats={["avif", "webp"]}
+      alt={alt}
+    />
     <CardText class="flex justify-center">
       <h3 class="font-semibold text-2xl">
         {title}

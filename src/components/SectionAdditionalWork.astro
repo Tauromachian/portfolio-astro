@@ -4,24 +4,28 @@ import CardProject from "./CardProject.astro";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
+import stackOverflowProfile from "../assets/stack-overflow-profile.jpg";
+import githubProfile from "../assets/github-profile.jpg";
+import mediumProfile from "../assets/medium-profile.jpg";
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const projects = [
   {
-    src: "stack-overflow-profile",
+    src: stackOverflowProfile,
     title: "StackOverflow",
     link: "https://stackoverflow.com/users/10824037/jogarcia",
     alt: "StackOverflow Profile",
   },
   {
-    src: "github-profile",
+    src: githubProfile,
     title: "GitHub",
     link: "https://github.com/Tauromachian",
     alt: "GitHub Profile",
   },
   {
-    src: "medium-profile",
+    src: mediumProfile,
     title: "Medium",
     link: "https://medium.com/@jogarcia",
     alt: "Medium Profile",
