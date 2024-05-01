@@ -52,4 +52,5 @@ export default {
   testingDescription: "Make sure everything works as it should.",
   language: "Languages",
   languagesDescription: "The languages in which you can communicate with me.",
+  cloudDescription: "Take advantage of powerful platforms to do the Back-end",
 };
