@@ -13,6 +13,9 @@ import stepper from "../assets/vue-simple-stepper.jpg";
 import ghost from "../assets/ghost-cms.jpg";
 import succubusTest from "../assets/succubus-test.jpg";
 import compoundCalculator from "../assets/compound-calculator.jpg";
+import metatron from "../assets/metatron.jpg";
+import expensesTracker from "../assets/expenses-tracker.jpg";
+import succubusBlog from "../assets/blog-succubus.jpg";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -72,6 +75,24 @@ const projects = [
     title: "Compound Calculator",
     link: "https://compounder.pro-link.xyz/",
     alt: "Compound Interest Calculator",
+  },
+  {
+    src: metatron,
+    title: "Metatron",
+    link: "https://metatron.jose-garcia.net",
+    alt: "Metatron the blog",
+  },
+  {
+    src: expensesTracker,
+    title: "Expenses Tracker",
+    link: "https://expenses-tracker.jose-garcia.net",
+    alt: "Expenses Tracker app",
+  },
+  {
+    src: succubusBlog,
+    title: "Succubus Blog",
+    link: "https://blog.succubus-bdsm.com",
+    alt: "Succubus the blog",
   },
 ];
 ---
