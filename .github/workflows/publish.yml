@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: git-checkout
         uses: actions/checkout@v4
+
+      - name: Enable Corepack
         run: corepack enable
 
       - name: Install node v20
