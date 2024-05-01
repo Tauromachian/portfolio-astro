@@ -15,7 +15,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@jogarcia/mgrid": "^1.0.0",
     "@mdi/js": "^7.3.67",
-    "astro": "^4.1.1",
+    "astro": "^4.7.0",
     "basic-debouncer": "^1.0.6",
     "nanostores": "^0.9.3",
     "sass": "^1.66.1",
