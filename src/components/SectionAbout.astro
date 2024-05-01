@@ -1,9 +1,13 @@
 ---
+import { Picture } from "astro:assets";
+
 import BaseSection from "./BaseSection.astro";
-import BaseCard from "./BaseCard.astro";
 import CardFeature from "./CardFeature.astro";
+import BaseCard from "./BaseCard.astro";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+import pictureMan from "../assets/picture-man-min.jpg";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -29,36 +33,12 @@ const t = useTranslations(lang);
       class="h-full flex basis-1/3 justify-center md:ml-20 portfolio-img-wrapper shrink"
     >
       <span class="portfolio-img">
-        <picture class="w-80">
-          <source
-            sizes="(min-width: 347px)"
-            type="image/avif"
-            srcset="
-                        /projects/picture-man-min.1280.avif 1280w,
-                        /projects/picture-man-min.640.avif   640w
-                        "
-          />
-          <source
-            type="image/webp"
-            sizes="(min-width: 347px)"
-            srcset="
-                        /projects/picture-man-min.1280.webp 1280w,
-                        /projects/picture-man-min.640.webp   640w
-                        "
-          />
-          <img
-            class="w-auto h-full rounded-lg mt-10 lg:mt-0"
-            decoding="async"
-            loading="lazy"
-            width="1256"
-            height="1004"
-            alt="Owner of this portfolio"
-            srcset="
-                        /projects/picture-man-min.1280.jpg 1280w,
-                        /projects/picture-man-min.640.jpg   640w
-                        "
-          />
-        </picture>
+        <Picture
+          src={pictureMan}
+          alt="Owner of this portfolio"
+          class="w-auto h-full rounded-lg mt-10 lg:mt-0"
+          pictureAttributes={{ class: "w-80" }}
+        />
       </span>
     </div>
   </div>
