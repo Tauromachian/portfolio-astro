@@ -562,6 +562,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/pridi@npm:^5.0.22":
+  version: 5.0.22
+  resolution: "@fontsource/pridi@npm:5.0.22"
+  checksum: 10/37f9a32a23aaef3fd553e62d2928bf5dcdee8b0b2c09b2f37b5f05d91ca4fd574f4b2011a75a1c3121f9bd629b2bf04e59dcd65fbad15cebf61b242bda5376cd
+  languageName: node
+  linkType: hard
+
+"@fontsource/righteous@npm:^5.0.21":
+  version: 5.0.21
+  resolution: "@fontsource/righteous@npm:5.0.21"
+  checksum: 10/4ce65689aa917722ab2a63bda5d8fa2fe4319581e050bafb868c7ab6c51a9cce6f43a76974aa21484c200fefcbdf0fc27dcbd172461c3b742d1fbdecd44564fb
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/module-importer@npm:^1.0.1":
   version: 1.0.1
   resolution: "@humanwhocodes/module-importer@npm:1.0.1"
@@ -1415,6 +1429,8 @@ __metadata:
   resolution: "astro-tutorial@workspace:."
   dependencies:
     "@astrojs/tailwind": "npm:^5.1.0"
+    "@fontsource/pridi": "npm:^5.0.22"
+    "@fontsource/righteous": "npm:^5.0.21"
     "@jogarcia/mgrid": "npm:^1.0.0"
     "@mdi/js": "npm:^7.3.67"
     astro: "npm:^4.13.3"

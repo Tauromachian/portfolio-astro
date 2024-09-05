@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource/pridi": "^5.0.22",
+    "@fontsource/righteous": "^5.0.21",
     "@jogarcia/mgrid": "^1.0.0",
     "@mdi/js": "^7.3.67",
     "astro": "^4.13.3",
