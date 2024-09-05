@@ -1,4 +1,7 @@
 ---
+import '@fontsource/pridi/latin'
+import '@fontsource/righteous/latin'
+
 import BottomNav from "@/components/BottomNav.astro";
 import VueBackToTop from "@/components/VueBackToTop.astro";
 import BaseGradient from "@/components/BaseGradient.astro";
@@ -54,14 +57,6 @@ const lang = getLangFromUrl(Astro.url);
     <meta property="og:copyright" content="Portfolio jogarcia" />
 
     <link rel="icon" type="image/x-icon" href="logo-extra-compressed.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com/" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com/" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Pridi:wght@400;600;700&family=Righteous&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZáéíóúabcdefghijklmnopqrstuvwxyz0123456789./',?"
-    />
 
     <style is:global lang="scss">
       @import "../styles/main.scss";
