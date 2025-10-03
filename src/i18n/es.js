@@ -2,7 +2,7 @@ export default {
   hero: {
     title: "Haciendo tus ideas realidad",
     description1: "Soy un desarrollador web/fullstacker",
-    description2: "Te construiré un sitio web y lucirá genial",
+    description2: "Tengo más de 5 años de experiencia",
     button1: "Descargar CV",
     button2: "Contáctame",
   },
