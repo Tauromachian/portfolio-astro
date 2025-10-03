@@ -1,0 +1,1 @@
+function c(e){return e&&e.__esModule&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e}var r,t;function n(){if(t)return r;t=1;let e;return r=function(o,u){clearTimeout(e),e=setTimeout(()=>{o()},u||200)},r}var a=n();const s=c(a);export{s as d,c as g};
