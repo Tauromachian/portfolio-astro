@@ -16,12 +16,12 @@
     "lint": "eslint '**/*.{js,jsx,ts,tsx,astro}'"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/tailwind": "6.0.2",
     "@fontsource/pridi": "^5.0.22",
     "@fontsource/righteous": "^5.0.21",
     "@jogarcia/mgrid": "^1.0.0",
     "@mdi/js": "^7.3.67",
-    "astro": "^4.13.3",
+    "astro": "5.14.1",
     "basic-debouncer": "^1.0.6",
     "nanostores": "^0.9.3",
     "sass": "^1.66.1",
