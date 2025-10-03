@@ -38,7 +38,7 @@ export default {
   button: {
     send: "Enviar",
   },
-  frontendDescription: "Lo visual y lo hermoso y artístico del proyecto.",
+  frontendDescription: "Lo visual y artístico del proyecto.",
   backendDescription: "Lo que el usuario no ve. El cerebro del proyecto.",
   database: "Bases de datos",
   databaseDescription: "La forma en la que los datos se guardan.",

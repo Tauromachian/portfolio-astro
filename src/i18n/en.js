@@ -36,7 +36,7 @@ export default {
   button: {
     send: "Send",
   },
-  frontendDescription: "The visuals the beauty of the project.",
+  frontendDescription: "The visuals of the project.",
   backendDescription:
     "Part of the app the user doesn't see. The brains of the project.",
   database: "Database",
