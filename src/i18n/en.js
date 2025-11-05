@@ -28,6 +28,8 @@ export default {
     title: "Additional work",
   },
 
+  openSourceContributions: "Open Source contributions",
+
   form: {
     name: "Name",
     email: "Email",

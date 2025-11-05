@@ -30,6 +30,8 @@ export default {
     title: "Trabajo adicional",
   },
 
+  openSourceContributions: "Contribuciones a open source",
+
   form: {
     name: "Nombre",
     email: "Correo",
