@@ -1,0 +1,49 @@
+---
+import BaseSection from "./BaseSection.astro";
+import CardProject from "./CardProject.astro";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+import ghostImg from "../assets/ghost-cms.jpg";
+import vuetifyImg from "../assets/vuetify-docs.jpg";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const projects = [
+  {
+    src: ghostImg,
+    title: "Casper Theme",
+    link: "https://demo.ghost.io/",
+    alt: "Ghost CMS's theme called Casper",
+  },
+  {
+    src: vuetifyImg,
+    title: "Vuetify Docs",
+    link: "https://vuetifyjs.com/en/",
+    alt: "Vuetify's docs website",
+  },
+];
+---
+
+<BaseSection
+  title={t("openSourceContributions")}
+  titleAlignment=""
+  id="additional-work"
+>
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {
+      projects.map((project) => (
+        <div class="col-span-1">
+          <CardProject
+            class="w-full"
+            title={project.title}
+            siteUrl={project.link}
+            src={project.src}
+            alt={project.alt}
+          />
+        </div>
+      ))
+    }
+  </div>
+</BaseSection>
