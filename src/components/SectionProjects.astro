@@ -12,6 +12,7 @@ import vspAirshow from "../assets/vsp-airshow-project.jpg";
 import metatron from "../assets/metatron.jpg";
 import expensesTracker from "../assets/expenses-tracker.jpg";
 import succubusBlog from "../assets/blog-succubus.jpg";
+import translations from "../assets/translations-manager.jpg";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -71,6 +72,13 @@ const projects = [
     title: "Succubus Blog",
     link: "https://blog.succubus-bdsm.com",
     alt: "Succubus the blog",
+  },
+
+  {
+    src: translations,
+    title: "Translations Manager",
+    link: "https://translations-manager.jose-garcia.net/",
+    alt: "Translations Manager",
   },
 ];
 ---
