@@ -7,6 +7,7 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import stackOverflowProfile from "../assets/stack-overflow-profile.jpg";
 import githubProfile from "../assets/github-profile.jpg";
 import mediumProfile from "../assets/medium-profile.jpg";
+import npmProfile from "../assets/npm-profile.jpg";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -28,6 +29,12 @@ const projects = [
     src: mediumProfile,
     title: "Medium",
     link: "https://medium.com/@jogarcia",
+    alt: "Medium Profile",
+  },
+  {
+    src: npmProfile,
+    title: "NPM",
+    link: "https://www.npmjs.com/~jogarcia",
     alt: "Medium Profile",
   },
 ];
