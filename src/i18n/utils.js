@@ -62,7 +62,9 @@ export function changeLanguage() {
 
   if (language === "es") {
     window.location.assign(url);
+    localStorage.setItem("lang", "en");
   } else {
     window.location.assign(`${url}/es`);
+    localStorage.setItem("lang", "es");
   }
 }
