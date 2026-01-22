@@ -1,8 +1,5 @@
 ---
 import AppAlert from "./AppAlert.astro";
-import BaseButton from "./BaseButton.astro";
-import BaseAreaText from "./BaseAreaText.astro";
-import BaseInputText from "./BaseInputText.astro";
 import BaseCard from "./BaseCard.astro";
 import BaseSection from "./BaseSection.astro";
 import SocialIconsBase from "./SocialIconsBase.astro";
@@ -77,7 +74,6 @@ const errorMessage = {
     <div class="message-wrapper" id="error-message" class="mt-3">
       <AppAlert message={errorMessage} />
     </div>
-
   </BaseCard>
 </BaseSection>
 
@@ -91,61 +87,61 @@ const errorMessage = {
   }
   customElements.define("section-contacts", SectionContacts);
 
-  const form = document.getElementById("contact-form");
+  // const form = document.getElementById("contact-form");
   const sectionContacts = document.querySelector("section-contacts");
 
-  form.addEventListener("submit", (event) => {
-    submitForm();
-    event.preventDefault();
-  });
+  // form.addEventListener("submit", (event) => {
+  //   submitForm();
+  //   event.preventDefault();
+  // });
+  //
+  // const submitForm = async () => {
+  //   const buttonId = sectionContacts.dataset.buttonid;
+  //
+  //   loadingState.setKey("loadingDictionary", { [buttonId]: true });
+  //
+  //   const formData = new FormData(document.forms[0]);
+  //   const formValues = Object.fromEntries(formData);
+  //
+  //   const body = {
+  //     ...formValues,
+  //     from: formValues.email,
+  //     subject: "Work email",
+  //     body: `Name: ${formValues.name}\nMessage: ${formValues.message}\nFrom:${formValues.email}`,
+  //     addresses: import.meta.env.PUBLIC_TARGET_EMAIL,
+  //   };
+  //
+  //   let response = null;
+  //
+  //   try {
+  //     response = await fetch(
+  //       `${import.meta.env.PUBLIC_SERVICE_MAILER_URL}send-email`,
+  //       {
+  //         method: "POST",
+  //         body: JSON.stringify(body),
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //       },
+  //     );
+  //   } catch (error) {
+  //     displayMessage("error-message");
+  //     return;
+  //   }
+  //
+  //   if (response.error) {
+  //     displayMessage("error-message");
+  //     return;
+  //   }
+  //
+  //   displayMessage("success-message");
+  //   loadingState.setKey("loadingDictionary", { [buttonId]: false });
+  // };
 
-  const submitForm = async () => {
-    const buttonId = sectionContacts.dataset.buttonid;
-
-    loadingState.setKey("loadingDictionary", { [buttonId]: true });
-
-    const formData = new FormData(document.forms[0]);
-    const formValues = Object.fromEntries(formData);
-
-    const body = {
-      ...formValues,
-      from: formValues.email,
-      subject: "Work email",
-      body: `Name: ${formValues.name}\nMessage: ${formValues.message}\nFrom:${formValues.email}`,
-      addresses: import.meta.env.PUBLIC_TARGET_EMAIL,
-    };
-
-    let response = null;
-
-    try {
-      response = await fetch(
-        `${import.meta.env.PUBLIC_SERVICE_MAILER_URL}send-email`,
-        {
-          method: "POST",
-          body: JSON.stringify(body),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        },
-      );
-    } catch (error) {
-      displayMessage("error-message");
-      return;
-    }
-
-    if (response.error) {
-      displayMessage("error-message");
-      return;
-    }
-
-    displayMessage("success-message");
-    loadingState.setKey("loadingDictionary", { [buttonId]: false });
-  };
-
-  const displayMessage = (id) => {
-    const messageWrapper = document.getElementById(id);
-    messageWrapper.style.display = "block";
-  };
+  // const displayMessage = (id) => {
+  //   const messageWrapper = document.getElementById(id);
+  //   messageWrapper.style.display = "block";
+  // };
 </script>
 
 <style>
