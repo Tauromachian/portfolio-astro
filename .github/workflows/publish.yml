@@ -21,10 +21,10 @@ jobs:
       - name: Enable Corepack
         run: corepack enable
 
-      - name: Install node v20
+      - name: Install node v24
         uses: actions/setup-node@v4
         with:
-          node-version: "20.11.0"
+          node-version: "24.13.0"
 
       - name: Install all dependencies
         run: yarn
