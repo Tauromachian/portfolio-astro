@@ -3,8 +3,6 @@ const { src, title, siteUrl, alt } = Astro.props;
 
 import { Picture } from "astro:assets";
 
-import expensesTrackerImage from "../assets/expenses-tracker.jpg";
-
 import BaseCard from "./BaseCard.astro";
 import CardText from "./CardText.astro";
 ---
@@ -19,7 +17,7 @@ import CardText from "./CardText.astro";
     <Picture
       class="w-full h-auto rounded-t-lg"
       src={src}
-      widths={[1280, expensesTrackerImage.width]}
+      widths={[1280, 1920]}
       formats={["avif", "webp"]}
       alt={alt}
     />
