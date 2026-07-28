@@ -1,0 +1,1 @@
+function o(){const e=document.URL;if(e.includes("es")){const[n]=e.split("/es");window.location.replace(n),localStorage.setItem("lang","en")}else window.location.replace(`${e}es`),localStorage.setItem("lang","es")}export{o as c};

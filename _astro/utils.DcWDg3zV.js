@@ -1,1 +1,0 @@
-function l(){const e=document.URL.split("/"),o=e.indexOf("portfolio");o!==-1&&e.splice(o,1);const n=e.pop(),t=e.toString().replaceAll(",","/");n==="es"?(window.location.replace(t),localStorage.setItem("lang","en")):(window.location.replace(`${t}/es`),localStorage.setItem("lang","es"))}export{l as c};
