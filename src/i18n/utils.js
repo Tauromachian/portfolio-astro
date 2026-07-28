@@ -50,21 +50,14 @@ function findTranslation(langObject, keyString) {
 }
 
 export function changeLanguage() {
-  const routePieces = document.URL.split("/");
+  const URL = document.URL;
 
-  const indexOfPortfolioString = routePieces.indexOf("portfolio");
-  if (indexOfPortfolioString !== -1) {
-    routePieces.splice(indexOfPortfolioString, 1);
-  }
-
-  const language = routePieces.pop();
-  const url = routePieces.toString().replaceAll(",", "/");
-
-  if (language === "es") {
+  if (URL.includes("es")) {
+    const [url] = URL.split("/es");
     window.location.replace(url);
     localStorage.setItem("lang", "en");
   } else {
-    window.location.replace(`${url}/es`);
+    window.location.replace(`${URL}es`);
     localStorage.setItem("lang", "es");
   }
 }
