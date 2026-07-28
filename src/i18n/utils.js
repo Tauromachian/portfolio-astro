@@ -61,10 +61,10 @@ export function changeLanguage() {
   const url = routePieces.toString().replaceAll(",", "/");
 
   if (language === "es") {
-    window.location.assign(url);
+    window.location.replace(url);
     localStorage.setItem("lang", "en");
   } else {
-    window.location.assign(`${url}/es`);
+    window.location.replace(`${url}/es`);
     localStorage.setItem("lang", "es");
   }
 }
