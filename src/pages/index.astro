@@ -24,24 +24,6 @@ import SectionOpenSourceContributions from "@/components/SectionOpenSourceContri
   </main>
 </Base>
 
-<script is:inline>
-  window.addEventListener("load", () => {
-    window.history.replaceState({}, "", "/");
-
-    handleLangLoad();
-  });
-
-  function handleLangLoad() {
-    const lang = localStorage.getItem("lang");
-
-    if (lang === "en") return;
-
-    if (navigator.language.split("-")[0] === "es") {
-      window.location.href = "es";
-    }
-  }
-</script>
-
 <style>
   .back-to-top {
     visibility: hidden;
